@@ -14,15 +14,15 @@ import javax.persistence.Table;
 public class BrandEntity {
 	@Id
 	@Column(name="ID_BRAND")
-	private String id_brand;
+	private int id_brand;
 	@Column(name="NAME_BRAND")
 	private String name_brand;
 	@OneToMany(mappedBy = "brands", fetch = FetchType.EAGER)
 	private Collection<ProductEntity> products;
-	public String getId_brand() {
+	public int getId_brand() {
 		return id_brand;
 	}
-	public void setId_brand(String id_brand) {
+	public void setId_brand(int id_brand) {
 		this.id_brand = id_brand;
 	}
 	public String getName_brand() {
@@ -37,4 +37,5 @@ public class BrandEntity {
 	public void setProducts(Collection<ProductEntity> products) {
 		this.products = products;
 	}
+	
 }

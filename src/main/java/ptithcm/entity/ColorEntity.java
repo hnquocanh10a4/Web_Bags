@@ -14,15 +14,15 @@ import javax.persistence.Table;
 public class ColorEntity {
 	@Id
 	@Column(name="ID_COLOR")
-	private String id_color;
+	private int id_color;
 	@Column(name="NAME_COLOR")
 	private String name_color;
 	@OneToMany(mappedBy = "colors", fetch = FetchType.EAGER)
 	private Collection<ProductEntity> products;
-	public String getId_color() {
+	public int getId_color() {
 		return id_color;
 	}
-	public void setId_color(String id_color) {
+	public void setId_color(int id_color) {
 		this.id_color = id_color;
 	}
 	public String getName_color() {
@@ -37,5 +37,6 @@ public class ColorEntity {
 	public void setProducts(Collection<ProductEntity> products) {
 		this.products = products;
 	}
+	
 	
 }

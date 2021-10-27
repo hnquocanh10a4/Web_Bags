@@ -12,7 +12,7 @@ public class ContactEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="ID_CONTACT")
-	private String id_contact;
+	private int id_contact;
 	@Column(name="NAME")
 	private String name;
 	@Column(name="EMAIL")
@@ -21,10 +21,10 @@ public class ContactEntity {
 	private String topic;
 	@Column(name="[CONTENT]")
 	private String content;
-	public String getId_contact() {
+	public int getId_contact() {
 		return id_contact;
 	}
-	public void setId_contact(String id_contact) {
+	public void setId_contact(int id_contact) {
 		this.id_contact = id_contact;
 	}
 	public String getName() {
@@ -51,5 +51,6 @@ public class ContactEntity {
 	public void setContent(String content) {
 		this.content = content;
 	}
+	
 	
 }

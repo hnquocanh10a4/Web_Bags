@@ -18,7 +18,7 @@ public class ProductEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="ID_PRODUCT")
-	private String id_product;
+	private int id_product;
 	@Column(name="PRICCE")
 	private float price;
 	@Column(name="DESCR")
@@ -35,10 +35,10 @@ public class ProductEntity {
 	private BrandEntity brands;
 	@OneToMany(mappedBy = "products1", fetch = FetchType.EAGER)
 	private Collection<ImagesEntity> images;
-	public String getId_product() {
+	public int getId_product() {
 		return id_product;
 	}
-	public void setId_product(String id_product) {
+	public void setId_product(int id_product) {
 		this.id_product = id_product;
 	}
 	public float getPrice() {
@@ -83,5 +83,6 @@ public class ProductEntity {
 	public void setImages(Collection<ImagesEntity> images) {
 		this.images = images;
 	}
+	
 	
 }
