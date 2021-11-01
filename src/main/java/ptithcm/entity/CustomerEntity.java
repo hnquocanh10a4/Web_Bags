@@ -12,11 +12,13 @@ public class CustomerEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="ID_USER")
-	private String id_user;
+	private int id_user;
 	@Column(name="ID_ROLE")
-	private String id_role;
+	private int id_role;
+	@Column(name="NAME")
+	private String name;
 	@Column(name="USERNAME")
-	private String usename;
+	private String username;
 	@Column(name="PASSWORD")
 	private String password;
 	@Column(name="ADDRESS_CUSTOMER")
@@ -26,24 +28,30 @@ public class CustomerEntity {
 	@Column(name="PHONE")
 	private String phone;
 	@Column(name="SEX")
-	private String sex;
-	public String getId_user() {
+	private Boolean sex;
+	public int getId_user() {
 		return id_user;
 	}
-	public void setId_user(String id_user) {
+	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
-	public String getId_role() {
+	public int getId_role() {
 		return id_role;
 	}
-	public void setId_role(String id_role) {
+	public void setId_role(int id_role) {
 		this.id_role = id_role;
 	}
-	public String getUsename() {
-		return usename;
+	public String getName() {
+		return name;
 	}
-	public void setUsename(String usename) {
-		this.usename = usename;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;
@@ -69,11 +77,14 @@ public class CustomerEntity {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getSex() {
+	public Boolean getSex() {
 		return sex;
 	}
-	public void setSex(String sex) {
+	public void setSex(Boolean sex) {
 		this.sex = sex;
 	}
+	
+	
+	
 	
 }
