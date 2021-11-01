@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="CUSTOMER")
 public class CustomerEntity {
@@ -16,8 +18,10 @@ public class CustomerEntity {
 	@Column(name="ID_ROLE")
 	private String id_role;
 	@Column(name="USERNAME")
-	private String usename;
+	@NotEmpty(message ="Username không được để trống !")
+	private String username;
 	@Column(name="PASSWORD")
+	@NotEmpty(message ="Password không được để trống !")
 	private String password;
 	@Column(name="ADDRESS_CUSTOMER")
 	private String address_customer;
@@ -27,6 +31,14 @@ public class CustomerEntity {
 	private String phone;
 	@Column(name="SEX")
 	private String sex;
+	@Column(name="NAME")
+	private String name;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public String getId_user() {
 		return id_user;
 	}
@@ -39,11 +51,11 @@ public class CustomerEntity {
 	public void setId_role(String id_role) {
 		this.id_role = id_role;
 	}
-	public String getUsename() {
-		return usename;
+	public String getUsername() {
+		return username;
 	}
-	public void setUsename(String usename) {
-		this.usename = usename;
+	public void setUsename(String username) {
+		this.username = username;
 	}
 	public String getPassword() {
 		return password;

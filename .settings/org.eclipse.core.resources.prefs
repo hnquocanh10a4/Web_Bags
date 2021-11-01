@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/main/java/ptithcm/controller/ContactController.java=UTF-8
+encoding//src/main/java/ptithcm/controller/LoginController.java=UTF-8
 encoding//src/main/java/ptithcm/controller/MailController.java=UTF-8
 encoding//src/main/java/ptithcm/entity/ContactEntity.java=UTF-8
+encoding//src/main/java/ptithcm/entity/CustomerEntity.java=UTF-8
