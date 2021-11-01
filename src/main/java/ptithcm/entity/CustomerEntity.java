@@ -14,11 +14,16 @@ public class CustomerEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="ID_USER")
-	private String id_user;
+	private int id_user;
 	@Column(name="ID_ROLE")
-	private String id_role;
+	private int id_role;
+	@Column(name="NAME")
+	private String name;
 	@Column(name="USERNAME")
+<<<<<<< HEAD
 	@NotEmpty(message ="Username không được để trống !")
+=======
+>>>>>>> 8e71196520adbcf7b9d6a030ef065986d83b2d0e
 	private String username;
 	@Column(name="PASSWORD")
 	@NotEmpty(message ="Password không được để trống !")
@@ -30,6 +35,7 @@ public class CustomerEntity {
 	@Column(name="PHONE")
 	private String phone;
 	@Column(name="SEX")
+<<<<<<< HEAD
 	private String sex;
 	@Column(name="NAME")
 	private String name;
@@ -40,21 +46,38 @@ public class CustomerEntity {
 		this.name = name;
 	}
 	public String getId_user() {
+=======
+	private Boolean sex;
+	public int getId_user() {
+>>>>>>> 8e71196520adbcf7b9d6a030ef065986d83b2d0e
 		return id_user;
 	}
-	public void setId_user(String id_user) {
+	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
-	public String getId_role() {
+	public int getId_role() {
 		return id_role;
 	}
-	public void setId_role(String id_role) {
+	public void setId_role(int id_role) {
 		this.id_role = id_role;
 	}
+<<<<<<< HEAD
 	public String getUsername() {
 		return username;
 	}
 	public void setUsename(String username) {
+=======
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+>>>>>>> 8e71196520adbcf7b9d6a030ef065986d83b2d0e
 		this.username = username;
 	}
 	public String getPassword() {
@@ -81,11 +104,14 @@ public class CustomerEntity {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getSex() {
+	public Boolean getSex() {
 		return sex;
 	}
-	public void setSex(String sex) {
+	public void setSex(Boolean sex) {
 		this.sex = sex;
 	}
+	
+	
+	
 	
 }
