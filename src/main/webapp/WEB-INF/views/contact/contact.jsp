@@ -286,11 +286,13 @@ https://www.tooplate.com/view/2114-pixie
             <div class="main-content">
               <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it celiac readymade vice.</p>
               <div class="container">
-                <form id="subscribe" action="" method="get">
+          		
+                <form id="subscribe" action="send.htm" method="post">
+               
                   <div class="row">
                     <div class="col-md-7">
                       <fieldset>
-                        <input name="email" type="text" class="form-control" id="email" 
+                        <input name="to" type="text" class="form-control" id="email" 
                         onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
                     	onBlur="if(this.value == '') { this.value = 'Your Email...';}"
                     	value="Your Email..." required="">
@@ -298,7 +300,7 @@ https://www.tooplate.com/view/2114-pixie
                     </div>
                     <div class="col-md-5">
                       <fieldset>
-                        <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
+                        <button  id="form-submit" class="button">Subscribe Now!</button>
                       </fieldset>
                     </div>
                   </div>
