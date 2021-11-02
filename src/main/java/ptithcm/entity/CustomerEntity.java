@@ -32,7 +32,7 @@ public class CustomerEntity {
 	@Column(name="PHONE")
 	private String phone;
 	@Column(name="SEX")
-	private String sex;
+	private boolean sex;
 	public int getId_user() {
 		return id_user;
 	}
@@ -81,12 +81,13 @@ public class CustomerEntity {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getSex() {
+	public boolean isSex() {
 		return sex;
 	}
-	public void setSex(String sex) {
+	public void setSex(boolean sex) {
 		this.sex = sex;
 	}
+	
 
 
 	
