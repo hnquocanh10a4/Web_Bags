@@ -2,6 +2,7 @@ package ptithcm.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 
 import org.hibernate.Query;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ptithcm.entity.CustomerEntity;
-import ptithcm.entity.ShopEntity;
+
 
 @Transactional
 @Controller
@@ -66,16 +67,29 @@ public class LoginController {
 	@RequestMapping(value = "login", method = RequestMethod.POST, params = "btnLogin")
 	public String login(ModelMap model, @Validated @ModelAttribute("register") CustomerEntity user,
 			BindingResult errors, @RequestParam("username") String username,
-			@RequestParam("password") String password) {
-		
+			@RequestParam("password") String password, HttpSession session, @RequestParam("capcha") String veriCapcha) {
+		String capcha1 = session.getAttribute("captcha_security").toString();
 		List<CustomerEntity> users = this.getUser();		
 		
-		for (CustomerEntity userLogin : users) {
-			if (userLogin.getUsername().equals(username) && userLogin.getPassword().equals(password)) {
-				model.addAttribute("mess", "Đăng nhập thành công");
-				return "index";
+		boolean verify = false;
+		if(capcha1.equals(veriCapcha)) {
+			verify = true;
+		}else {
+			verify = false;
+		}
+		
+		if(!verify) {
+			model.addAttribute("reCapcha", "Vui lòng nhập đúng Capcha");
+			return "login/login";
+		}else {
+			for (CustomerEntity userLogin : users) {
+				if (userLogin.getUsername().equals(username) && userLogin.getPassword().equals(password)) {
+					model.addAttribute("mess", "Đăng nhập thành công");
+					return "index";
+				}
 			}
 		}
+		
 			model.addAttribute("mess", "Tên đăng nhập hoặc mật khẩu không chính xác ! ");
 			return "login/login";
 
