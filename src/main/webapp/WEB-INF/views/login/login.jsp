@@ -50,6 +50,9 @@
 	<div class="main">
 		<div class="container a-container" id="a-container">
 
+       
+
+
 			${message }
 			<form:form class="form" id="a-form" method="POST" action="login.htm"
 				modelAttribute="register">
