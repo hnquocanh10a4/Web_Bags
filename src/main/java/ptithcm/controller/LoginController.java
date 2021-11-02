@@ -35,11 +35,30 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST, params = "register")
-	public String insert(ModelMap model, @ModelAttribute("register") CustomerEntity user) {
+	public String insert(ModelMap model, @Validated @ModelAttribute("register") CustomerEntity user,
+			BindingResult errors, @RequestParam("username") String username,
+			@RequestParam("password") String password,
+			@RequestParam("name") String name,
+			@RequestParam("email") String email,
+			@RequestParam("address_customer") String address_customer) {
 		user.setId_role(1);
 
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
+		
+		List<CustomerEntity> users = this.getUser();		
+		
+		for (CustomerEntity userLogin : users) {
+			if (userLogin.getUsername().equals(username) ) {
+				errors.rejectValue("username", "user",  "username đã dược sử dụng !");
+				return "login/login";
+			}
+//			if ( userLogin.getEmail().equals(email)) {
+//				errors.rejectValue("email", "user",  "email đã dược sử dụng !");
+//				return "login/login";
+//			}
+		}
+			
 
 		try {
 			session.save(user);
