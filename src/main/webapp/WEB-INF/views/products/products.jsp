@@ -278,7 +278,13 @@ https://www.tooplate.com/view/2114-pixie
     </div>
     <!-- Subscribe Form Ends Here -->
 
-
+	 <c:forEach var="ct" items="${products}"> 
+                <li class="shop-detail-item">
+                  <i class="fas fa-building"></i>
+                  <span class="shop-detail-company">${ct.getImages().image }</span>
+                </li>
+               
+                </c:forEach>
     
     <!-- Footer Starts Here -->
     <div class="footer">

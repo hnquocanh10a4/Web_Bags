@@ -1,72 +1,92 @@
 package ptithcm.entity;
-
-
-
-
-
 import java.io.Serializable;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
 import javax.persistence.Table;
 
-@Embeddable
 
-class CourseRatingKey implements Serializable { 
-    @Column(name="IMAGE")
-    private String image;
 
-    @Column(name="ID_PRODUCT")
-    private String id_product;
-}
 
 @Entity
 @Table(name="IMAGES")
-public class ImagesEntity {
-	@EmbeddedId
-	private CourseRatingKey images;
+@IdClass(value=ImagesEntity.imagesId.class)
+public class ImagesEntity  implements Serializable{
+	@Id
+	@Column(name="IMAGE")
+	private String image;
+	@Column(name="ID_PRODUCT")
+	private Integer id_product;
 	
-	 @ManyToOne
-	 @MapsId("ID_PRODUCT")
-	 @JoinColumn(name="ID_PRODUCT")
-	 private ProductEntity products;
-	 
-	 @ManyToOne
-	 @MapsId("IMAGE")
-	 @JoinColumn(name="IMAGE")
-	 private ProductEntity products1;
-
-	public CourseRatingKey getImages() {
-		return images;
+	@ManyToOne
+	
+	private ProductEntity pro;
+	
+	public ProductEntity getPro() {
+		return pro;
 	}
-
-	public void setImages(CourseRatingKey images) {
-		this.images = images;
+	public void setPro(ProductEntity pro) {
+		this.pro = pro;
 	}
-
-	public ProductEntity getProducts() {
-		return products;
+	public String getImage() {
+		return image;
 	}
-
-	public void setProducts(ProductEntity products) {
-		this.products = products;
+	public void setImage(String image) {
+		this.image = image;
 	}
-
-	public ProductEntity getProducts1() {
-		return products1;
+	public Integer getId_product() {
+		return id_product;
 	}
-
-	public void setProducts1(ProductEntity products1) {
-		this.products1 = products1;
+	public void setId_product(Integer id_product) {
+		this.id_product = id_product;
 	}
 	
 	
-	 
-	 
+	static class imagesId implements Serializable {
+		private String image;
+		private Integer id_product;
+		public String getImage() {
+			return image;
+		}
+		public void setImage(String image) {
+			this.image = image;
+		}
+		public Integer getId_product() {
+			return id_product;
+		}
+		public void setId_product(Integer id_product) {
+			this.id_product = id_product;
+		}
+		@Override
+		public int hashCode() {
+			return Objects.hash(id_product, image);
+		}
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			imagesId other = (imagesId) obj;
+			return Objects.equals(id_product, other.id_product) && Objects.equals(image, other.image);
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+ 
 }
