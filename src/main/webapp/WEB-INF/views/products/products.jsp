@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="fmt" %>
+
+
+<%@ taglib prefix="tg" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Pixie - Products</title>
-
+	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Bootstrap core CSS -->
     <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 	<link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
@@ -202,23 +208,31 @@ https://www.tooplate.com/view/2114-pixie
     </div>
   
     <div class="featured container no-gutter">
+    <jsp:useBean id="pagedListHolder" scope="request"
+				type="org.springframework.beans.support.PagedListHolder" />
+			<c:url value="products/" var="pagedLink">
+				<c:param name="p" value="~" />
+			</c:url>
 	<div class="row posts">
-	<c:forEach var="pd" items="${products}"> 
+	
+	<%-- <c:forEach var="pd" items="${products}"> --%>
+	<c:forEach var="pd" items="${pagedListHolder.pageList}"> 
         
             <div id="1" class="item new col-md-4 product-top-in">
               <a href="single-product.html">
                 <div class="featured-item">
                   <!-- <img src="assets/images/product-01.jpg" alt=""> -->
                   <!-- /resources/assets/images/product-01.jpg -->
-                  <img src="<c:url value='/resources/assets/images/product-01.jpg' />" alt="">
-                  <h4>${pd.brands.name_brand }</h4>
-                  <h6>${pd.price }</h6>
+                  <img src="<c:url value='/resources/assets/images/${pd.image }.jpg' />" alt="">
+                  <h4>${pd.title }</h4>
+                  <h6>$${pd.price }</h6>
                 </div>
               </a>
             </div>
             
         
         </c:forEach>
+        
         </div>
     </div>
 
@@ -226,12 +240,16 @@ https://www.tooplate.com/view/2114-pixie
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <ul>
+            <!-- <ul>
               <li class="current-page"><a href="#">1</a></li>
               <li><a href="#">2</a></li>
               <li><a href="#">3</a></li>
               <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
+            </ul> -->
+            <div>
+					<tg:paging pagedListHolder="${pagedListHolder}"
+						pagedLink="${pagedLink}" />
+			</div>
           </div>
         </div>
       </div>
@@ -278,13 +296,13 @@ https://www.tooplate.com/view/2114-pixie
     </div>
     <!-- Subscribe Form Ends Here -->
 
-	 <c:forEach var="ct" items="${products}"> 
+	 <%-- <c:forEach var="ct" items="${products}"> 
                 <li class="shop-detail-item">
                   <i class="fas fa-building"></i>
-                  <span class="shop-detail-company">${ct.getImages().image }</span>
+                  <span class="shop-detail-company">${ct.image }</span>
                 </li>
                
-                </c:forEach>
+                </c:forEach> --%>
     
     <!-- Footer Starts Here -->
     <div class="footer">
