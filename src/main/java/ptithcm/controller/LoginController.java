@@ -31,12 +31,12 @@ public class LoginController {
 	SessionFactory factory;
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(ModelMap model, @ModelAttribute("register") CustomerEntity user) {
+	public String login(ModelMap model, @ModelAttribute("register") CustomerEntity user ) {
 		return "login/login";
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST, params = "register")
-	public String insert(ModelMap model, @Validated @ModelAttribute("register") CustomerEntity user,
+	public String insert(ModelMap model, @Validated @ModelAttribute("register")  CustomerEntity user,
 			BindingResult errors, @RequestParam("username") String username,
 			@RequestParam("password") String password,
 			@RequestParam("name") String name,
@@ -84,7 +84,7 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.POST, params = "btnLogin")
-	public String login(ModelMap model, @Validated @ModelAttribute("register") CustomerEntity user,
+	public String login(ModelMap model, @Validated @ModelAttribute("register")  CustomerEntity user,
 			BindingResult errors, @RequestParam("username") String username,
 			@RequestParam("password") String password, HttpSession session, @RequestParam("capcha") String veriCapcha) {
 		String capcha1 = session.getAttribute("captcha_security").toString();

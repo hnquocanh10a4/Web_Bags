@@ -75,9 +75,12 @@ public class ProductEntity {
 	public void setBrands(BrandEntity brands) {
 		this.brands = brands;
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+>>>>>>> 76e6339ba8e13b2cde7d5c6268bb12f0bb39bc1f
 	
 	
 	
