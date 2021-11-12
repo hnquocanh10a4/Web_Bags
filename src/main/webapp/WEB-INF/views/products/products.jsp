@@ -219,11 +219,11 @@ https://www.tooplate.com/view/2114-pixie
 	<c:forEach var="pd" items="${pagedListHolder.pageList}"> 
         
             <div id="1" class="item new col-md-4 product-top-in">
-              <a href="single-product.html">
+              <a href="singleproduct.htm?id=${pd.id_product }" >
                 <div class="featured-item">
                   <!-- <img src="assets/images/product-01.jpg" alt=""> -->
                   <!-- /resources/assets/images/product-01.jpg -->
-                  <img src="<c:url value='/resources/assets/images/${pd.image }.jpg' />" alt="">
+                  <img src="<c:url value='/resources/assets/images/${pd.image}.jpg' />" alt="">
                   <h4>${pd.title }</h4>
                   <h6>$${pd.price }</h6>
                 </div>

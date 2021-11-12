@@ -203,31 +203,15 @@
             </div>
              
             <div id="carousel" class="flexslider">
-              <!-- <ul class="slides">
-                  <li>
-                    <img src="assets/images/thumb-01.jpg" />
-                  </li>
-                  <li>
-                    <img src="assets/images/thumb-02.jpg" />
-                  </li>
-                  <li>
-                    <img src="assets/images/thumb-03.jpg" />
-                  </li>
-                  <li>
-                    <img src="assets/images/thumb-04.jpg" />
-                  </li>
-                </ul> -->
+           
             </div>
           </div>
         </div>
         <div class="col-md-6">
           <div class="right-content">
-            <h4>Single Product Name</h4>
-            <h6>$55.00</h6>
-            <p>Proin commodo, diam a ultricies sagittis, erat odio rhoncus metus, eu feugiat lorem lacus aliquet arcu.
-              Curabitur in gravida nisi, non placerat nibh. Praesent sit amet diam ultrices, commodo turpis id,
-              dignissim leo. Suspendisse mauris massa, porttitor non fermentum vel, ullamcorper scelerisque velit. </p>
-            <span>7 left on stock</span>
+            <h4>${pro.title }</h4>
+            <h6>${pro.price }</h6>
+            <p>${pro.descr}</span>
             <form action="" method="get">
               <label for="quantity">Quantity:</label>
               <input name="quantity" type="quantity" class="quantity-text" id="quantity"
@@ -237,10 +221,10 @@
             </form>
             <div class="down-content">
               <div class="categories">
-                <h6>Brand: <span>Channel</span></h6>
+                <h6>Brand: <span>${pro.brands.name_brand }</span></h6>
               </div>
               <div class="color">
-                <h6>Color: <span>Red, blue</span></h6>
+                <h6>Color: <span>${pro.colors.name_color }</span></h6>
               </div>
               <div class="share">
                 <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
@@ -269,7 +253,7 @@
         <div class="col-md-12">
           <div class="owl-carousel owl-theme">
            <c:forEach begin="1" end="9" var="pd1" items="${products}"> 
-            <a href="single-product.html">
+            <a href="singleproduct.htm?id=${pd1.id_product }">
               <div class="featured-item">
                 <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" alt="Item 1">
                 <h4>${pd1.title}</h4>
