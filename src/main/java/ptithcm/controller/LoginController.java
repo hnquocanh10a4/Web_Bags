@@ -42,7 +42,7 @@ public class LoginController {
 			@RequestParam("name") String name,
 			@RequestParam("email") String email,
 			@RequestParam("address_customer") String address_customer) {
-		user.setId_role(1);
+//		user.setRoles(setId_role(1));
 
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
