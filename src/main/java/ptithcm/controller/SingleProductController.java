@@ -28,6 +28,7 @@ public class SingleProductController {
 		for(ProductEntity pro: products) {
 			if(pro.getId_product() == Integer.parseInt(getID)) {
 				model.addAttribute("pro", pro);
+				break;
 			}
 		}
 		model.addAttribute("products", products);

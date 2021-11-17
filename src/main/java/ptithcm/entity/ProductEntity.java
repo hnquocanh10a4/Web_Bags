@@ -1,16 +1,22 @@
 package ptithcm.entity;
 
-import java.util.Collection;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 
 @Entity
 @Table(name="PRODUCT")
@@ -20,12 +26,16 @@ public class ProductEntity {
 	@Column(name="ID_PRODUCT")
 	private int id_product;
 	@Column(name="PRICCE")
+	@Min(value=1, message = "giá tiền tối thiểu là 1")
 	private float price;
 	@Column(name="DESCR")
+	@NotEmpty(message = "Mô tả sản phẩm không được để trống")
 	private String descr;
-	@Column(name="TITLE")
+	@Column(name="TITLE")	
+	@NotEmpty(message = "Tên sản phẩm không được để trống")
 	private String title;
 	@Column(name="IMAGE")
+	@NotEmpty(message = "Vui lòng chọn hình sản phẩm ")
 	private String image;
 	@ManyToOne
 	@JoinColumn(name="ID_COLOR")
@@ -33,6 +43,16 @@ public class ProductEntity {
 	@ManyToOne
 	@JoinColumn(name="ID_BRAND")
 	private BrandEntity brands;
+	@Column(name="QUANTITY")	
+	@Min(value=1, message = "số lượng tối thiểu là 1")
+	private Integer quantity;
+	
+	public Integer getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
 	public int getId_product() {
 		return id_product;
 	}

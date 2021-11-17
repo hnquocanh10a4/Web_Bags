@@ -196,7 +196,7 @@
             <div id="slider" class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="<c:url value='/resources/assets/images/${pro.image}.jpg'/>" />
+                  <img src="<c:url value='/resources/assets/images/${pro.image}'/>" />
                 </li>
           
               </ul>
@@ -255,7 +255,7 @@
            <c:forEach begin="1" end="9" var="pd1" items="${products}"> 
             <a href="singleproduct.htm?id=${pd1.id_product }">
               <div class="featured-item">
-                <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" alt="Item 1">
+                <img src="<c:url value='/resources/assets/images/${pd1.image}'/>" alt="Item 1">
                 <h4>${pd1.title}</h4>
                 <h6>${pd1.price}</h6>
               </div>

@@ -223,7 +223,7 @@ https://www.tooplate.com/view/2114-pixie
                 <div class="featured-item">
                   <!-- <img src="assets/images/product-01.jpg" alt=""> -->
                   <!-- /resources/assets/images/product-01.jpg -->
-                  <img src="<c:url value='/resources/assets/images/${pd.image}.jpg' />" alt="">
+                  <img src="<c:url value='/resources/assets/images/${pd.image}' />" alt="">
                   <h4>${pd.title }</h4>
                   <h6>$${pd.price }</h6>
                 </div>
