@@ -7,12 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-<<<<<<< HEAD
+
 import javax.persistence.OneToMany;
-=======
+
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
->>>>>>> be2f190397a1c7a692d52beef7d5a227b7fc975d
+
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -60,11 +60,11 @@ public class CustomerEntity {
 	private Collection<CartEntity> cartEntities;
 	
 	
-	public CustomerEntity(int id_user, int id_role, String name, String username, String password,
+	public CustomerEntity(int id_user, RoleEntity roles, String name, String username, String password,
 			String address_customer, String email, String phone, boolean sex, Collection<CartEntity> cartEntities) {
 		super();
 		this.id_user = id_user;
-		this.id_role = id_role;
+		this.roles = roles;
 		this.name = name;
 		this.username = username;
 		this.password = password;

@@ -32,49 +32,10 @@ public class LoginController {
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String login(ModelMap model, @ModelAttribute("register") CustomerEntity user ) {
-		return "login/login";
+		return "login/login1";
 	}
 
-	@RequestMapping(value = "login", method = RequestMethod.POST, params = "register")
-	public String insert(ModelMap model, @Validated @ModelAttribute("register")  CustomerEntity user,
-			BindingResult errors, @RequestParam("username") String username,
-			@RequestParam("password") String password,
-			@RequestParam("name") String name,
-			@RequestParam("email") String email,
-			@RequestParam("address_customer") String address_customer) {
-//		user.setRoles(setId_role(1));
-
-		Session session = factory.openSession();
-		Transaction t = session.beginTransaction();
-		
-		List<CustomerEntity> users = this.getUser();		
-		
-		for (CustomerEntity userLogin : users) {
-			if (userLogin.getUsername().equals(username) ) {
-				errors.rejectValue("username", "user",  "username đã dược sử dụng !");
-				return "login/login";
-			}
-//			if ( userLogin.getEmail().equals(email)) {
-//				errors.rejectValue("email", "user",  "email đã dược sử dụng !");
-//				return "login/login";
-//			}
-		}
-			
-
-		try {
-			session.save(user);
-			t.commit();
-			model.addAttribute("message", "Đăng kí thành công !");
-		} catch (Exception e) {
-			t.rollback();
-			model.addAttribute("message", "Đăng kí thất bại !");
-		} finally {
-			session.close();
-
-		}
-		return "login/login";
-	}
-
+	
 	public List<CustomerEntity> getUser() {
 		Session session = factory.getCurrentSession();
 		String hql = "FROM CustomerEntity";
@@ -99,7 +60,7 @@ public class LoginController {
 		
 		if(!verify) {
 			model.addAttribute("reCapcha", "Vui lòng nhập đúng Capcha");
-			return "login/login";
+			return "login/login1";
 		}else {
 			for (CustomerEntity userLogin : users) {
 				if (userLogin.getUsername().equals(username) && userLogin.getPassword().equals(password)) {
@@ -110,7 +71,7 @@ public class LoginController {
 		}
 		
 			model.addAttribute("mess", "Tên đăng nhập hoặc mật khẩu không chính xác ! ");
-			return "login/login";
+			return "login/login1";
 
 		
 	}
