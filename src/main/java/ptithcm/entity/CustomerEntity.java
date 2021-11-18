@@ -1,9 +1,13 @@
 package ptithcm.entity;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -45,6 +49,34 @@ public class CustomerEntity {
 	private String phone;
 	@Column(name="SEX")
 	private boolean sex;
+	
+	@OneToMany(mappedBy = "pk.customerEntity", fetch = FetchType.EAGER)
+	private Collection<CartEntity> cartEntities;
+	
+	
+	public CustomerEntity(int id_user, int id_role, String name, String username, String password,
+			String address_customer, String email, String phone, boolean sex, Collection<CartEntity> cartEntities) {
+		super();
+		this.id_user = id_user;
+		this.id_role = id_role;
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.address_customer = address_customer;
+		this.email = email;
+		this.phone = phone;
+		this.sex = sex;
+		this.cartEntities = cartEntities;
+	}
+	public CustomerEntity() {
+		super();
+	}
+	public Collection<CartEntity> getCartEntities() {
+		return cartEntities;
+	}
+	public void setCartEntities(Collection<CartEntity> cartEntities) {
+		this.cartEntities = cartEntities;
+	}
 	public int getId_user() {
 		return id_user;
 	}
