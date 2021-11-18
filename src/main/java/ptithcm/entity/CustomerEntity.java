@@ -7,7 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+<<<<<<< HEAD
 import javax.persistence.OneToMany;
+=======
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+>>>>>>> be2f190397a1c7a692d52beef7d5a227b7fc975d
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 
@@ -22,8 +27,9 @@ public class CustomerEntity {
 	@GeneratedValue
 	@Column(name="ID_USER")
 	private int id_user;
-	@Column(name="ID_ROLE")
-	private int id_role;
+	@ManyToOne
+	@JoinColumn(name="ID_ROLE")
+	private RoleEntity roles;
 	@Column(name="NAME")
 	@NotEmpty(message ="Tên không được để trống !")
 	@Pattern(regexp = "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ_.]*" , message ="Tên chỉ chứa các kí tự chữ !")
@@ -83,11 +89,11 @@ public class CustomerEntity {
 	public void setId_user(int id_user) {
 		this.id_user = id_user;
 	}
-	public int getId_role() {
-		return id_role;
+	public RoleEntity getRoles() {
+		return roles;
 	}
-	public void setId_role(int id_role) {
-		this.id_role = id_role;
+	public void setRoles(RoleEntity roles) {
+		this.roles = roles;
 	}
 	public String getName() {
 		return name;
@@ -131,10 +137,6 @@ public class CustomerEntity {
 	public void setSex(boolean sex) {
 		this.sex = sex;
 	}
-	
-
-
-	
 	
 	
 	
