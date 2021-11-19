@@ -64,18 +64,18 @@ https://www.tooplate.com/view/2114-pixie
             <div class="nav-wrap__nav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home
+                  <a class="nav-link" href="#">Home
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="products.html">Products</a>
+                  <a class="nav-link" href="products/index.htm">Products</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">About Us</a>
+                  <a class="nav-link" href="about.htm">About Us</a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="contact.htm">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -166,11 +166,11 @@ https://www.tooplate.com/view/2114-pixie
                 <ul class="nav-login-list">
                   <li class="nav-login-item">
   
-                    <a href="" class="nav-login-link-login">Log in</a>
+                    <a href="login.htm" class="nav-login-link-login">Log in</a>
                   </li>
                   <li class="nav-login-item">
   
-                    <a href="" class="nav-login-link-register">Register</a>
+                    <a href="register.htm" class="nav-login-link-register">Register</a>
                   </li>
                 </ul>
                 <span class="nav-login-name">Quá»c Anh</span>

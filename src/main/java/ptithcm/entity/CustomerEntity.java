@@ -59,8 +59,6 @@ public class CustomerEntity {
 	@OneToMany(mappedBy = "pk.customerEntity", fetch = FetchType.EAGER)
 	private Collection<CartEntity> cartEntities;
 	
-	
-	
 	public CustomerEntity(int id_user, RoleEntity roles, String name, String username, String password,
 			String address_customer, String email, String phone, boolean sex, Collection<CartEntity> cartEntities) {
 		super();

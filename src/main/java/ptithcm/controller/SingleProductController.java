@@ -23,7 +23,9 @@ public class SingleProductController {
 	@RequestMapping("singleproduct")
 	public String index(ModelMap model, HttpServletRequest request) {
 		String getID = request.getParameter("id");
-		
+		if(getID == null) {
+			getID = "1";
+		}
 		List<ProductEntity> products = this.getProducts();
 		for(ProductEntity pro: products) {
 			if(pro.getId_product() == Integer.parseInt(getID)) {
