@@ -41,7 +41,7 @@
 		<div class="screen__content">
 			<form:form class="login" id="b-form" action="login.htm" method="POST"
 				modelAttribute="register">
-				<span class="form__span">${mess }</span>
+				<span class="form__span errors">${mess }</span>
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
 					<form:input path="username" type="text" class="login__input" placeholder="User name " />

@@ -10,7 +10,8 @@
     <title>QA company | Đăng kí</title>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
-    <link rel="stylesheet" href="./rg.css">
+    <link rel="stylesheet"
+	href="<c:url value='/resources/assets/css/rg.css'/>">
 
 </head>
 
@@ -19,43 +20,43 @@
     <div class="container">
         <div class="screen">
             <div class="screen__content">
-                <form:form class="login" id="a-form" method="POST" action="login.htm" modelAttribute="register">
-                    <p class="errors">${message }</p>
+                <form:form class="login" id="a-form" method="POST" action="register.htm" modelAttribute="register">
+                    <%-- <p class="errors">${message }</p> --%>
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <form:input path="name" type="text" class="login__input" placeholder="Name "/>
+                        <form:input path="name" type="text" class="login__input" placeholder="Name " />
                          <form:errors path="name" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-user"></i>
-                        <form:input path="username" type="text" class="login__input" placeholder="User name "/>
+                        <form:input path="username" type="text" class="login__input" placeholder="User name " />
                          <form:errors path="username" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-lock"></i>
-                         <form:input path="password" type="password" class="login__input" placeholder="Password"/>
+                         <form:input path="password" type="password" class="login__input" placeholder="Password" />
                          <form:errors path="password" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-envelope"></i>
-                        <form:input path="email" type="email" class="login__input" placeholder="Email"/>
+                        <form:input path="email" type="email" class="login__input" placeholder="Email" />
                         <form:errors path="email" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-map-marker"></i>
-                        <form:input path="address_customer" type="text" class="login__input" placeholder="Address "/>
+                        <form:input path="address_customer" type="text" class="login__input" placeholder="Address " />
                         <form:errors path="address_customer" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-phone"></i>
-                        <form:input path="phone" type="text" class="login__input" placeholder="Phone "/>
+                        <form:input path="phone" type="text" class="login__input" placeholder="Phone " />
                         <form:errors path="phone" element="span" cssClass="errors"/>
                     </div>
                     <div class="login__field">
                         <i class="login__icon fas fa-genderless"></i>
                         <form:select path="sex" class="form__input-sex login__input">
                             <option class="login__input" value="true">Nam</option>
-                            <option class="login__input" value="false">Nữ»¯</option>
+                            <option class="login__input" value="false">Nữ</option>
                         </form:select>
                     </div>
                     <button  name="register" class="button login__submit">

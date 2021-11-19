@@ -196,7 +196,7 @@
             <div id="slider" class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="<c:url value='/resources/assets/images/${pro.image}'/>" />
+                  <img src="<c:url value='/resources/assets/images/${pro.image}.jpg'/>" />
                 </li>
           
               </ul>

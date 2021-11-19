@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ptithcm.entity.CustomerEntity;
+import ptithcm.entity.RoleEntity;
 
 @Transactional
 @Controller
@@ -37,7 +38,9 @@ public class RegisterController {
 			@RequestParam("name") String name,
 			@RequestParam("email") String email,
 			@RequestParam("address_customer") String address_customer) {
-//		user.setRoles(setId_role(1));
+			RoleEntity r =new RoleEntity();
+			r.setId_role(1);
+			user.setRoles(r);
 
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
@@ -63,11 +66,13 @@ public class RegisterController {
 		} catch (Exception e) {
 			t.rollback();
 			model.addAttribute("message", "Đăng kí thất bại !");
+			return "login/register";
 		} finally {
 			session.close();
 
 		}
-		return "login/register";
+//		return "login/register";
+		return "redirect:/login.htm";
 	}
 
 	public List<CustomerEntity> getUser() {

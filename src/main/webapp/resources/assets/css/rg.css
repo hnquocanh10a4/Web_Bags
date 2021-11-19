@@ -91,7 +91,7 @@ body {
 }
 
 .login__field {
-	padding: 15px 0px;	
+	padding: 7px 0px;	
 	position: relative;	
 }
 
@@ -177,3 +177,8 @@ body {
 	transform: scale(1.5);	
 }
 
+.errors{
+	color :red;
+	font-size: 0.8rem;
+	display: block;
+}
