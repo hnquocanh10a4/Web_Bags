@@ -1,7 +1,5 @@
 package ptithcm.controller;
 
-
-
 import java.util.List;
 
 
@@ -26,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import ptithcm.entity.ColorEntity;
 import ptithcm.entity.ProductEntity;
+
 
 
 @Transactional
@@ -74,7 +73,6 @@ public class ProductAdminController {
 // xoa san pham
 	@RequestMapping(value="product/{id}.htm",params = "delete")
 	public String delete(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
-		
 		this.deleteProduct(this.getProduct(id));
 		List<ProductEntity> products = this.getProduct();
 		model.addAttribute("products", products);
@@ -83,6 +81,7 @@ public class ProductAdminController {
 // cap nhat san pham	
 	@RequestMapping(value="product/{id}.htm",params = "update")
 	public String update(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
+		System.out.print(1234);
 		model.addAttribute("product", this.getProduct(id));
 		model.addAttribute("btnStatus", "BtnUpdate");
 		HttpSession session = request.getSession();
@@ -137,9 +136,11 @@ public class ProductAdminController {
 		ProductEntity list = (ProductEntity) query.list().get(0);
 		return list;
 	}
+	
 //	them san pham
 	public Integer insertProduct(ProductEntity pd) {
 		Session session = factory.openSession();
+		
 		Transaction t = session.beginTransaction();
 
 		try {

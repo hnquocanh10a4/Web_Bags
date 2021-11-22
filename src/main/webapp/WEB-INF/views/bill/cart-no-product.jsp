@@ -12,11 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Pixie - Cart</title>
 	<base href="${pageContext.servletContext.contextPath}/">
-    <title>Pixie Template - About Page</title>
-
     <!-- Bootstrap core CSS -->
-   <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
+    <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
 
 
     <!-- Additional CSS Files -->
@@ -24,16 +23,46 @@
   	<link href="<c:url value='/resources/assets/css/tooplate-main.css' />" rel="stylesheet">
   	<link href="<c:url value='/resources/assets/css/owl.css' />" rel="stylesheet">
   	<link href="<c:url value='/resources/assets/css/new-style.css' />" rel="stylesheet">
-	<link href="<c:url value='/resources/assets/css/flex-slider.css' />" rel="stylesheet">
-<!--
-Tooplate 2114 Pixie
-https://www.tooplate.com/view/2114-pixie
--->
+  	<style>
+    .cart {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart img {
+      width: 200px;
+    }
+
+    .cart span {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+
+    .cart a {
+      width: 200px;
+      height: 45px;
+      background-color: #2cccff;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s linear;
+    }
+
+    .cart a:hover {
+      opacity: 0.8;
+    }
+  </style>
   </head>
 
   <body>
-    
-    <!-- Pre Header -->
+  
     <div id="pre-header">
       <div class="container">
         <div class="row">
@@ -47,7 +76,7 @@ https://www.tooplate.com/view/2114-pixie
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
       <div class="container">
-        <a class="navbar-brand" href="#"><img src="/resources/assets/images/header-logo.png" alt=""></a>
+        <a class="navbar-brand" href="#"><img src="assets/images/header-logo.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,24 +85,24 @@ https://www.tooplate.com/view/2114-pixie
             <div class="nav-wrap__nav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">Home
+                  <a class="nav-link" href="index.html">Home
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="products/index.htm">Products</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.htm">About Us</a>
+                <li class="nav-item ">
+                  <a class="nav-link" href="products.html">Products</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.htm">Contact Us</a>
+                  <a class="nav-link" href="about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
               </ul>
             </div>
             <div class="cart-search-wrap">
               <div class="nav-search">
-                <input type="text" class="nav-search-input" placeholder="TÃ¬m kiáº¿n trong shop">
+                <input type="text" class="nav-search-input" placeholder="Tìm kiến trong shop">
                 <button class="nav-search-btn">
                   <i class="fas fa-search nav-search-btn-icon"></i>
                 </button>
@@ -84,8 +113,8 @@ https://www.tooplate.com/view/2114-pixie
                 <!-- no cart : nav-cart-no-cart -->
                 <div class="nav-cart-has-cart">
                   <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                  <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
-                  <h3 class="nav-cart-title">Sáº£n pháº©m ÄÃ£ thÃªm</h3>
+                  <span class="nav-cart-no-cart-title">Chưa có sản phẩm nào </span>
+                  <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
                   <ul class="nav-cart-list-item">
                     <li class="nav-cart-item">
                       <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
@@ -94,15 +123,15 @@ https://www.tooplate.com/view/2114-pixie
                         <div class="nav-cart-item-head">
                           <h4 class="nav-cart-item-name">Dior Lady Dior Medium Bag</h4>
                           <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">21.000.000Ä</span>
+                            <span class="nav-cart-item-price">21.000.000đ</span>
                             <span class="nav-cart-item-multiple">x</span>
                             <span class="nav-cart-item-quantity">2</span>
   
                           </div>
                         </div>
                         <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
+                          <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                          <span class="nav-cart-item-delete">Xóa</span>
                         </div>
                       </div>
                     </li>
@@ -113,15 +142,15 @@ https://www.tooplate.com/view/2114-pixie
                         <div class="nav-cart-item-head">
                           <h4 class="nav-cart-item-name">Dior And Shawn Saddle</h4>
                           <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">99.000.000Ä</span>
+                            <span class="nav-cart-item-price">99.000.000đ</span>
                             <span class="nav-cart-item-multiple">x</span>
                             <span class="nav-cart-item-quantity">1</span>
   
                           </div>
                         </div>
                         <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
+                          <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                          <span class="nav-cart-item-delete">Xóa</span>
                         </div>
                       </div>
                     </li>
@@ -132,22 +161,22 @@ https://www.tooplate.com/view/2114-pixie
                         <div class="nav-cart-item-head">
                           <h4 class="nav-cart-item-name">Blue Dior Baby!</h4>
                           <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">11.000.000Ä</span>
+                            <span class="nav-cart-item-price">11.000.000đ</span>
                             <span class="nav-cart-item-multiple">x</span>
                             <span class="nav-cart-item-quantity">2</span>
   
                           </div>
                         </div>
                         <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
+                          <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                          <span class="nav-cart-item-delete">Xóa</span>
                         </div>
                       </div>
                     </li>
                   </ul>
                   <div class="nav-cart-wrap-btn-delete">
-                    <a href="" class="nav-cart-item-view-cart">Xem giá»
-                        hÃ ng</a>
+                    <a href="" class="nav-cart-item-view-cart">Xem giỏ
+                        hàng</a>
                   </div>
                 </div>
               </div>
@@ -158,14 +187,14 @@ https://www.tooplate.com/view/2114-pixie
                 <ul class="nav-login-list">
                   <li class="nav-login-item">
   
-                    <a href="login.htm" class="nav-login-link-login">Log in</a>
+                    <a href="" class="nav-login-link-login">Log in</a>
                   </li>
                   <li class="nav-login-item">
   
-                    <a href="register.htm" class="nav-login-link-register">Register</a>
+                    <a href="" class="nav-login-link-register">Register</a>
                   </li>
                 </ul>
-                <span class="nav-login-name">Quá»c Anh</span>
+                <span class="nav-login-name">Quốc Anh</span>
                 <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
               </div>
   
@@ -177,33 +206,22 @@ https://www.tooplate.com/view/2114-pixie
     </nav>
 
     <!-- Page Content -->
-    <!-- About Page Starts Here -->
-    <div class="about-page">
+    <!-- Items Starts Here -->
+    <div class="featured-page">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <div class="line-dec"></div>
-              <h1>About Us</h1>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="left-image">
-              <img src="${company.image }" alt="">
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="right-content">
-              <h4>${company.name }</h4>
-              	<p>${company.story }</p>
-                <h6>Find us on: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
-              </div>
-            </div>
+           <div class="cart">
+          <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
+            alt="">
+          <span>Giỏ hàng của bạn còn trống</span>
+          <a href="#" class="">Mua ngay</a>
+        </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- About Page Ends Here -->
+  
+
 
     <!-- Subscribe Form Starts Here -->
     <div class="subscribe-form">
@@ -300,29 +318,17 @@ https://www.tooplate.com/view/2114-pixie
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<c:url value='/resources/vendor/jquery/jquery.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor/bootstrap/js/bootstrap.bundle.min.js'/>"></script>
 
 
     <!-- Additional Scripts -->
     <script src="<c:url value='/resources/assets/js/custom.js' />"></script>
   	<script src="<c:url value='/resources/assets/js/owl.js' />"></script>
   	<script src="<c:url value='/resources/assets/js/isotope.js' />"></script>
-  	 <script src="<c:url value='/resources/assets/js/flex-slider.js' />"></script>
-  
- 
 
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-      function clearField(t){                   //declaring the array outside of the
-      if(! cleared[t.id]){                      // function makes it static and global
-          cleared[t.id] = 1;  // you could use true and false, but that's more typing
-          t.value='';         // with more chance of typos
-          t.style.color='#fff';
-          }
-      }
-    </script>
+    
 
 
   </body>

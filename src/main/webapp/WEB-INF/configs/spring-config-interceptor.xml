@@ -19,7 +19,7 @@
 		 <mvc:interceptor>
 			<mvc:mapping path="/admin/**"/>
 			<mvc:mapping path="/singleproduct.htm"/>
-			<!-- <mvc:exclude-mapping path="/products/**"/> -->
+			 <mvc:mapping path="/bill/**"/> 
 			<bean class="ptithcm.interceptor.SecurityInterceptor" />
 			
 		</mvc:interceptor>

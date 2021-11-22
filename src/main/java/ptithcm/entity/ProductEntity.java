@@ -4,6 +4,7 @@ package ptithcm.entity;
 
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -49,16 +50,19 @@ public class ProductEntity {
 	@Min(value=1, message = "số lượng tối thiểu là 1")
 	private Integer quantity;
 	
-	@OneToMany(mappedBy = "pk.productEntity", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "pk.productEntity", fetch = FetchType.EAGER,
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true)
 	private Collection<BillDetailEntity> billDetailEntities;
 	
-	@OneToMany(mappedBy = "pk.productEntity", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "pk.productEntity", fetch = FetchType.EAGER,  cascade = CascadeType.ALL,
+	        orphanRemoval = true)
 	private Collection<CartEntity> cartEntities;
-	
-	
+
 	public ProductEntity() {
 		super();
 	}
+
 	public ProductEntity(int id_product, float price, String descr, String title, String image, ColorEntity colors,
 			BrandEntity brands, Integer quantity, Collection<BillDetailEntity> billDetailEntities,
 			Collection<CartEntity> cartEntities) {
@@ -74,67 +78,88 @@ public class ProductEntity {
 		this.billDetailEntities = billDetailEntities;
 		this.cartEntities = cartEntities;
 	}
-	public Collection<CartEntity> getCartEntities() {
-		return cartEntities;
-	}
-	public void setCartEntities(Collection<CartEntity> cartEntities) {
-		this.cartEntities = cartEntities;
-	}
-	public Collection<BillDetailEntity> getBillDetailEntities() {
-		return billDetailEntities;
-	}
-	public void setBillDetailEntities(Collection<BillDetailEntity> billDetailEntities) {
-		this.billDetailEntities = billDetailEntities;
-	}
-	
-	public Integer getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(Integer quantity) {
-		this.quantity = quantity;
-	}
+
 	public int getId_product() {
 		return id_product;
 	}
+
 	public void setId_product(int id_product) {
 		this.id_product = id_product;
 	}
+
 	public float getPrice() {
 		return price;
 	}
+
 	public void setPrice(float price) {
 		this.price = price;
 	}
+
 	public String getDescr() {
 		return descr;
 	}
+
 	public void setDescr(String descr) {
 		this.descr = descr;
 	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getImage() {
 		return image;
 	}
+
 	public void setImage(String image) {
 		this.image = image;
 	}
+
 	public ColorEntity getColors() {
 		return colors;
 	}
+
 	public void setColors(ColorEntity colors) {
 		this.colors = colors;
 	}
+
 	public BrandEntity getBrands() {
 		return brands;
 	}
+
 	public void setBrands(BrandEntity brands) {
 		this.brands = brands;
 	}
+
+	public Integer getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
+	}
+
+	public Collection<BillDetailEntity> getBillDetailEntities() {
+		return billDetailEntities;
+	}
+
+	public void setBillDetailEntities(Collection<BillDetailEntity> billDetailEntities) {
+		this.billDetailEntities = billDetailEntities;
+	}
+
+	public Collection<CartEntity> getCartEntities() {
+		return cartEntities;
+	}
+
+	public void setCartEntities(Collection<CartEntity> cartEntities) {
+		this.cartEntities = cartEntities;
+	}
+	
+	
 
 	
 	
