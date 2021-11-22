@@ -496,3 +496,7 @@
     width: 100%;
     object-fit: cover;
 }
+
+.errors{
+	color: red;
+}
