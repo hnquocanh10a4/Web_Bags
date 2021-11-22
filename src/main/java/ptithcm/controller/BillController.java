@@ -104,6 +104,7 @@ public class BillController {
 		String username = session.getAttribute("username").toString();
 		CustomerEntity user = this.getCustomer(username);
 		List<CartEntity> carts = this.getCarts(user.getId_user());
+		System.out.print(123);
 		if(!carts.isEmpty()) {
 			Date now = new Date();
 			SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
@@ -125,7 +126,8 @@ public class BillController {
 				this.deleteCart(cart);
 				
 			}
-			
+			List<BillDetailEntity> purchase = this.getProductinBillDetail();
+			model.addAttribute("purchase", purchase);
 			return "bill/purchase-order";
 		}
 			return "bill/cart-no-product";
@@ -213,6 +215,12 @@ public class BillController {
 		}
 		return 1;
 	}
-
+	public List<BillDetailEntity> getProductinBillDetail(){
+		Session session = factory.getCurrentSession();
+		String hql = "FROM BillDetailEntity";
+		Query query = session.createQuery(hql);
+		List<BillDetailEntity> list = query.list();
+		return list;
+	}
 	
 }

@@ -231,7 +231,7 @@ https://www.tooplate.com/view/2114-pixie
                 </div>
               </div>
               <div class="btn-cart">
-             	<form action="purchase.htm">
+             	<form action="bill/index.htm">
                 <button data-toggle="modal" data-target="#exampleModal" name="confirm"  type="submit"  class="btn btn-primary btn-lg" style="color: #fff !important;">Đặt hàng</button>
                 </form>
               </div>

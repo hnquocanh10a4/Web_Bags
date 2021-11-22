@@ -24,8 +24,6 @@ public class CartEntity {
 	@Min(value=1, message = "Số lượng tối thiểu là 1")
 	private int quantity;
 	
-
-
 	public int getQuantity() {
 		return quantity;
 	}

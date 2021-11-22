@@ -23,13 +23,13 @@ public class PurcharOrderController {
 	SessionFactory factory;
 	@RequestMapping("purchase")
 	public String index(ModelMap model) {
-		List<BillDetailEntity> purchase = this.getProduct();
+		List<BillDetailEntity> purchase = this.getProductinBillDetail();
 		model.addAttribute("purchase", purchase);
 		return "bill/purchase-order";
 	}
 	
 	
-	public List<BillDetailEntity> getProduct(){
+	public List<BillDetailEntity> getProductinBillDetail(){
 		Session session = factory.getCurrentSession();
 		String hql = "FROM BillDetailEntity";
 		Query query = session.createQuery(hql);
