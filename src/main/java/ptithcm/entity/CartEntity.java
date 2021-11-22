@@ -7,6 +7,7 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
+import javax.validation.constraints.Min;
 
 @Entity
 @Table(name="CART")
@@ -18,10 +19,13 @@ import javax.persistence.Table;
 public class CartEntity {
 	@EmbeddedId CartPK pk;
 	
-	@Column(name="QUANTITY")
+
+	@Column(name = "QUANTITY")
+	@Min(value=1, message = "Số lượng tối thiểu là 1")
 	private int quantity;
 	
-	
+
+
 	public int getQuantity() {
 		return quantity;
 	}

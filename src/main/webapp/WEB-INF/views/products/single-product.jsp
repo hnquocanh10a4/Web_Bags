@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   <title>Pixie - Product Detail</title>
+  <base href="${pageContext.servletContext.contextPath}/">
 
   <!-- Bootstrap core CSS -->
 <link href="<c:url value='/resources/vendor/bootstrap/css/bootstrap.min.css' />" rel="stylesheet">
@@ -85,70 +86,32 @@
               <div class="nav-cart-has-cart">
                 <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
                 <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
-                <h3 class="nav-cart-title">Sáº£n pháº©m ÄÃ£ thÃªm</h3>
+                <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
                 <ul class="nav-cart-list-item">
+                  <c:forEach var="ca" items="${getCart}">
                   <li class="nav-cart-item">
                     <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
                       class="nav-cart-item-img">
                     <div class="nav-cart-item-detail">
                       <div class="nav-cart-item-head">
-                        <h4 class="nav-cart-item-name">Dior Lady Dior Medium Bag</h4>
+                        <h4 class="nav-cart-item-name">${ca.getPk().getProductEntity().getTitle() }</h4>
                         <div class="nav-cart-item-wrap">
-                          <span class="nav-cart-item-price">21.000.000Ä</span>
+                          <span class="nav-cart-item-price">${ca.getPk().getProductEntity().getPrice() }</span>
                           <span class="nav-cart-item-multiple">x</span>
-                          <span class="nav-cart-item-quantity">2</span>
+                          <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
 
                         </div>
                       </div>
                       <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                        <span class="nav-cart-item-delete">XÃ³a</span>
+                        <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                        <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
                       </div>
                     </div>
                   </li>
-                  <li class="nav-cart-item">
-                    <img
-                      src="https://images.stockx.com/images/Dior-x-Shawn-Saddle-Bag-Blue.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&trimcolor=ffffff&updated_at=1606317582"
-                      alt="" class="nav-cart-item-img">
-                    <div class="nav-cart-item-detail">
-                      <div class="nav-cart-item-head">
-                        <h4 class="nav-cart-item-name">Dior And Shawn Saddle</h4>
-                        <div class="nav-cart-item-wrap">
-                          <span class="nav-cart-item-price">99.000.000Ä</span>
-                          <span class="nav-cart-item-multiple">x</span>
-                          <span class="nav-cart-item-quantity">1</span>
-
-                        </div>
-                      </div>
-                      <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                        <span class="nav-cart-item-delete">XÃ³a</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="nav-cart-item">
-                    <img src="https://i.pinimg.com/474x/91/3a/85/913a85aa512415ec0a5700d6617bf2c4.jpg" alt=""
-                      class="nav-cart-item-img">
-                    <div class="nav-cart-item-detail">
-                      <div class="nav-cart-item-head">
-                        <h4 class="nav-cart-item-name">Blue Dior Baby!</h4>
-                        <div class="nav-cart-item-wrap">
-                          <span class="nav-cart-item-price">11.000.000Ä</span>
-                          <span class="nav-cart-item-multiple">x</span>
-                          <span class="nav-cart-item-quantity">2</span>
-
-                        </div>
-                      </div>
-                      <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                        <span class="nav-cart-item-delete">XÃ³a</span>
-                      </div>
-                    </div>
-                  </li>
+              		</c:forEach>
                 </ul>
                 <div class="nav-cart-wrap-btn-delete">
-                  <a href="" class="nav-cart-item-view-cart">Xem giá»
-                    hÃ ng</a>
+                  <a href="" class="nav-cart-item-view-cart">Xem chi tiết giỏ hàng</a>
                 </div>
               </div>
             </div>
@@ -212,14 +175,20 @@
             <h4>${pro.title }</h4>
             <h6>${pro.price }</h6>
             <p>${pro.descr}</span>
-            <form action="" method="get">
+            <form:form action="" method="post" modelAttribute="addCart">
               <label for="quantity">Quantity:</label>
-              <input name="quantity" type="quantity" class="quantity-text" id="quantity"
+              <input path="quantity" name="quantity" type="quantity" class="quantity-text" id="quantity"
                 onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
-                value="1">
-              <input type="submit" class="button" value="Order Now!">
-            </form>
+                value="1"></input>
+              <button onclick="tb_cart()" type="submit" class="button">Order Now!</button>
+              <form:errors path="quantity" element="span" cssClass="errors"/>
+                <div class="errors">${messCart}</div>
+            </form:form>
+            <div class="form-quantity">
+                <p>Còn lại: <b>${pro.quantity } </b> sản phẩm trong kho</p>
+              </div>
             <div class="down-content">
+              
               <div class="categories">
                 <h6>Brand: <span>${pro.brands.name_brand }</span></h6>
               </div>
@@ -255,7 +224,7 @@
            <c:forEach begin="1" end="9" var="pd1" items="${products}"> 
             <a href="singleproduct.htm?id=${pd1.id_product }">
               <div class="featured-item">
-                <img src="<c:url value='/resources/assets/images/${pd1.image}'/>" alt="Item 1">
+                <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" alt="Item 1">
                 <h4>${pd1.title}</h4>
                 <h6>${pd1.price}</h6>
               </div>
@@ -378,15 +347,20 @@
  
 
 
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+  <script>
+    /* cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
     function clearField(t) {                   //declaring the array outside of the
       if (!cleared[t.id]) {                      // function makes it static and global
         cleared[t.id] = 1;  // you could use true and false, but that's more typing
         t.value = '';         // with more chance of typos
         t.style.color = '#fff';
       }
-    }
+    } */
+    
+    /* function tb_cart()
+    {
+    	alert( "Ok !");
+    } */
   </script>
 
 

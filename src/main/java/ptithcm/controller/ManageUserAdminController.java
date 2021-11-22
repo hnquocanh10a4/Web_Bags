@@ -72,7 +72,7 @@ public class ManageUserAdminController {
 		String hql = "FROM CustomerEntity where id_user = :id";
 		Query query = session.createQuery(hql);
 		query.setParameter("id", id);
-		CustomerEntity list = (CustomerEntity) query.list().get(0);
+		CustomerEntity list =(CustomerEntity) query.list().get(0);
 		return list;
 	}
 }
