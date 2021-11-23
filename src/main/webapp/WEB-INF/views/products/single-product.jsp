@@ -221,10 +221,10 @@
         </div>
         <div class="col-md-12">
           <div class="owl-carousel owl-theme">
-           <c:forEach begin="1" end="9" var="pd1" items="${products}"> 
+           <c:forEach var="pd1" items="${products}"> 
             <a href="singleproduct.htm?id=${pd1.id_product }">
               <div class="featured-item">
-                <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" alt="Item 1">
+                <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" >
                 <h4>${pd1.title}</h4>
                 <h6>${pd1.price}</h6>
               </div>

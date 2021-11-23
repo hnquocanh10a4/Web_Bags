@@ -82,10 +82,12 @@ https://www.tooplate.com/view/2114-pixie
             </div>
             <div class="cart-search-wrap">
               <div class="nav-search">
-                <input type="text" class="nav-search-input" placeholder="TÃ¬m kiáº¿n trong shop">
-                <button class="nav-search-btn">
+              <form action="">
+                <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
+                <button name="btnsearch" class="nav-search-btn">
                   <i class="fas fa-search nav-search-btn-icon"></i>
                 </button>
+                </form>
               </div>
   
               <div class="nav-cart">
@@ -197,10 +199,12 @@ https://www.tooplate.com/view/2114-pixie
           </div>
           <div class="col-md-8 col-sm-12">
             <div id="filters" class="button-group">
-              <button class="btn btn-primary" data-filter="*">All Products</button>
-              <button class="btn btn-primary" data-filter=".new">Newest</button>
-              <button class="btn btn-primary" data-filter=".low">Low Price</button>
-              <button class="btn btn-primary" data-filter=".high">Hight Price</button>
+            <form action="">
+              <button class="btn btn-primary" >Mới nhất</button>
+              <button name="btnOld" class="btn btn-primary" >Cũ nhất</button>
+              <button name="btnLowPrice" class="btn btn-primary" >Giá thấp nhất</button>
+              <button name="btnHightPrice" class="btn btn-primary" >Giá cao nhất</button>
+              </form>
             </div>
           </div>
         </div>
