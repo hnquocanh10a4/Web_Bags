@@ -47,9 +47,20 @@ public class SingleProductController {
 //		}
 		HttpSession session1 = request.getSession();
 		String currentUser = (String) session1.getAttribute("username");
-		int id = this.getIDUser(currentUser);
-		List<CartEntity> getCart = this.getCart(id);
-		model.addAttribute("getCart", getCart);
+		if(currentUser == null )
+		{
+			model.addAttribute("loginStatus", "nav-login-no-login");
+			
+		}
+		else
+		{
+			model.addAttribute("loginStatus", "");
+			model.addAttribute("currentUser", currentUser);
+			int id = this.getIDUser(currentUser);
+			List<CartEntity> getCart = this.getCart(id);
+			model.addAttribute("getCart", getCart);
+		}
+		
 		ProductEntity pro = this.getPro(currentIDpr);
 		model.addAttribute("pro", pro);
 		List<ProductEntity> products = this.getProducts();

@@ -74,10 +74,12 @@
           </div>
           <div class="cart-search-wrap">
             <div class="nav-search">
-              <input type="text" class="nav-search-input" placeholder="TÃ¬m kiáº¿n trong shop">
-              <button class="nav-search-btn">
-                <i class="fas fa-search nav-search-btn-icon"></i>
-              </button>
+              <form action="http://localhost:8080/Web_Bags/products/index.htm">
+                <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
+                <button name="btnsearch" class="nav-search-btn">
+                  <i class="fas fa-search nav-search-btn-icon"></i>
+                </button>
+                </form>
             </div>
 
             <div class="nav-cart">
@@ -90,7 +92,7 @@
                 <ul class="nav-cart-list-item">
                   <c:forEach var="ca" items="${getCart}">
                   <li class="nav-cart-item">
-                    <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
+                    <img src="<c:url value='/resources/assets/images/${ca.getPk().getProductEntity().getImage() }.jpg'/>" alt=""
                       class="nav-cart-item-img">
                     <div class="nav-cart-item-detail">
                       <div class="nav-cart-item-head">
@@ -117,7 +119,7 @@
             </div>
 
             <!-- nav-login-no-login -->
-            <div class="nav-login nav-login-no-login">
+            <div class="nav-login ${loginStatus}">
               <i class="fas fa-user nav-login-icon"></i>
               <ul class="nav-login-list">
                 <li class="nav-login-item">
@@ -129,7 +131,7 @@
                   <a href="" class="nav-login-link-register">Register</a>
                 </li>
               </ul>
-              <span class="nav-login-name">Quá»c Anh</span>
+              <span class="nav-login-name">${currentUser}</span>
               <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
             </div>
 
@@ -250,30 +252,31 @@
           </div>
         </div>
         <div class="col-md-8 offset-md-2">
-          <div class="main-content">
-            <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it
-              celiac readymade vice.</p>
-            <div class="container">
-              <form id="subscribe" action="" method="get">
-                <div class="row">
-                  <div class="col-md-7">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email"
-                        onfocus="if(this.value == 'Your Email...') { this.value = ''; }"
-                        onBlur="if(this.value == '') { this.value = 'Your Email...';}" value="Your Email..."
-                        required="">
-                    </fieldset>
+            <div class="main-content">
+              <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it celiac readymade vice.</p>
+              <div class="container">
+          		
+                <form id="subscribe" action="send.htm" method="post">
+               
+                  <div class="row">
+                    <div class="col-md-7">
+                      <fieldset>
+                        <input name="to" type="text" class="form-control" id="email" 
+                        onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
+                    	onBlur="if(this.value == '') { this.value = 'Your Email...';}"
+                    	value="Your Email..." required="">
+                      </fieldset>
+                    </div>
+                    <div class="col-md-5">
+                      <fieldset>
+                        <button  id="form-submit" class="button">Subscribe Now!</button>
+                      </fieldset>
+                    </div>
                   </div>
-                  <div class="col-md-5">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
-                    </fieldset>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>

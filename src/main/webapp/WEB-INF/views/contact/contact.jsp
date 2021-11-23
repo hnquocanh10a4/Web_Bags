@@ -81,99 +81,64 @@ https://www.tooplate.com/view/2114-pixie
             </div>
             <div class="cart-search-wrap">
               <div class="nav-search">
-                <input type="text" class="nav-search-input" placeholder="TÃ¬m kiáº¿n trong shop">
-                <button class="nav-search-btn">
+                <form action="http://localhost:8080/Web_Bags/products/index.htm">
+                <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
+                <button name="btnsearch" class="nav-search-btn">
                   <i class="fas fa-search nav-search-btn-icon"></i>
                 </button>
+                </form>
               </div>
   
               <div class="nav-cart">
                 <i class="nav-cart-icon fas fa-shopping-cart"></i>
                 <!-- no cart : nav-cart-no-cart -->
                 <div class="nav-cart-has-cart">
-                  <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                  <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
-                  <h3 class="nav-cart-title">Sáº£n pháº©m ÄÃ£ thÃªm</h3>
-                  <ul class="nav-cart-list-item">
-                    <li class="nav-cart-item">
-                      <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
-                        class="nav-cart-item-img">
-                      <div class="nav-cart-item-detail">
-                        <div class="nav-cart-item-head">
-                          <h4 class="nav-cart-item-name">Dior Lady Dior Medium Bag</h4>
-                          <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">21.000.000Ä</span>
-                            <span class="nav-cart-item-multiple">x</span>
-                            <span class="nav-cart-item-quantity">2</span>
-  
-                          </div>
-                        </div>
-                        <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
+                <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
+                <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
+                <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
+                <ul class="nav-cart-list-item">
+                  <c:forEach var="ca" items="${getCart}">
+                  <li class="nav-cart-item">
+                    <img src="<c:url value='/resources/assets/images/${ca.getPk().getProductEntity().getImage() }.jpg'/>" alt=""
+                      class="nav-cart-item-img">
+                    <div class="nav-cart-item-detail">
+                      <div class="nav-cart-item-head">
+                        <h4 class="nav-cart-item-name">${ca.getPk().getProductEntity().getTitle() }</h4>
+                        <div class="nav-cart-item-wrap">
+                          <span class="nav-cart-item-price">${ca.getPk().getProductEntity().getPrice() }</span>
+                          <span class="nav-cart-item-multiple">x</span>
+                          <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
+
                         </div>
                       </div>
-                    </li>
-                    <li class="nav-cart-item">
-                      <img src="https://images.stockx.com/images/Dior-x-Shawn-Saddle-Bag-Blue.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&trimcolor=ffffff&updated_at=1606317582" alt=""
-                        class="nav-cart-item-img">
-                      <div class="nav-cart-item-detail">
-                        <div class="nav-cart-item-head">
-                          <h4 class="nav-cart-item-name">Dior And Shawn Saddle</h4>
-                          <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">99.000.000Ä</span>
-                            <span class="nav-cart-item-multiple">x</span>
-                            <span class="nav-cart-item-quantity">1</span>
-  
-                          </div>
-                        </div>
-                        <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
-                        </div>
+                      <div class="nav-cart-item-body">
+                        <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                        <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
                       </div>
-                    </li>
-                    <li class="nav-cart-item">
-                      <img src="https://i.pinimg.com/474x/91/3a/85/913a85aa512415ec0a5700d6617bf2c4.jpg" alt=""
-                        class="nav-cart-item-img">
-                      <div class="nav-cart-item-detail">
-                        <div class="nav-cart-item-head">
-                          <h4 class="nav-cart-item-name">Blue Dior Baby!</h4>
-                          <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">11.000.000Ä</span>
-                            <span class="nav-cart-item-multiple">x</span>
-                            <span class="nav-cart-item-quantity">2</span>
-  
-                          </div>
-                        </div>
-                        <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  <div class="nav-cart-wrap-btn-delete">
-                    <a href="" class="nav-cart-item-view-cart">Xem giá»
-                        hÃ ng</a>
-                  </div>
+                    </div>
+                  </li>
+              		</c:forEach>
+                </ul>
+                <div class="nav-cart-wrap-btn-delete">
+                  <a href="" class="nav-cart-item-view-cart">Xem chi tiết giỏ hàng</a>
                 </div>
+              </div>
               </div>
   
               <!-- nav-login-no-login -->
-              <div class="nav-login nav-login-no-login">
+              <div class="nav-login ${loginStatus} }">
                 <i class="fas fa-user nav-login-icon"></i>
                 <ul class="nav-login-list">
                   <li class="nav-login-item">
-  
-                    <a href="login.htm" class="nav-login-link-login">Log in</a>
+                    
+                    <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
                   </li>
                   <li class="nav-login-item">
-  
-                    <a href="register.htm" class="nav-login-link-register">Register</a>
+                    
+                    <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
                   </li>
                 </ul>
-                <span class="nav-login-name">Quá»c Anh</span>
+                <span class="nav-login-name"> ${currentUser}</span>
                 <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
               </div>
   
