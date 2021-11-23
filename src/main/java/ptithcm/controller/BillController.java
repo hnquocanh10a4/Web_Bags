@@ -91,11 +91,6 @@ public class BillController {
 
 		return "bill/cart-detail";
 		
-			
-		
-		
-					
-		
 	}
 	
 	@RequestMapping(value="index", params="confirm")
@@ -125,9 +120,17 @@ public class BillController {
 				this.CreateBillDetail(billDetail);
 				this.deleteCart(cart);
 				
+				int quantityAfterOrder = billDetail.getPk().getProductEntity().getQuantity() - billDetail.getQuantity();
+				billDetail.getPk().getProductEntity().setQuantity(quantityAfterOrder);
+				
+				this.updateProduct(billDetail.getPk().getProductEntity());
+				
+				
 			}
 			List<BillDetailEntity> purchase = this.getProductinBillDetail();
 			model.addAttribute("purchase", purchase);
+			
+			
 			return "bill/purchase-order";
 		}
 			return "bill/cart-no-product";
@@ -221,6 +224,22 @@ public class BillController {
 		Query query = session.createQuery(hql);
 		List<BillDetailEntity> list = query.list();
 		return list;
+	}
+	
+	public Integer updateProduct(ProductEntity pd) {
+		Session session = factory.openSession();
+		Transaction t = session.beginTransaction();
+
+		try {
+			session.update(pd);
+			t.commit();
+		} catch (Exception e) {
+			t.rollback();
+			return 0;
+		} finally {
+			session.close();
+		}
+		return 1;
 	}
 	
 }

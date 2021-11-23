@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ptithcm.entity.BillDetailEntity;
 import ptithcm.entity.ColorEntity;
 import ptithcm.entity.CustomerEntity;
 import ptithcm.entity.ProductEntity;
@@ -71,11 +72,19 @@ public class LoginController {
 					HttpSession session1 = request.getSession();
 					session.setAttribute("username", username);
 					if(userLogin.getRoles().getId_role() == 0) {
-						List<ProductEntity> products = this.getProduct();
-						model.addAttribute("products", products);
-						model.addAttribute("btnStatus", "BtnAdd");
-						model.addAttribute("title", "Thêm Sản phẩm");
-						return "product_admin/productadmin";
+						
+						List<BillDetailEntity> billDetailEntities = this.getBillDetail();
+						int totalQuantity = 0;
+						float totalMoney = 0;
+						for(BillDetailEntity bill: billDetailEntities) {
+							totalQuantity += bill.getQuantity();
+							totalMoney += (bill.getPrice() * bill.getQuantity());
+						}
+						model.addAttribute("userQuantity", users.size());
+						model.addAttribute("totalQuantity", totalQuantity);
+						model.addAttribute("totalMoney", totalMoney);
+						model.addAttribute("billDetailEntities", billDetailEntities);
+						return "statistics/statistics";
 					}else {
 						return "index";
 					}
@@ -92,31 +101,14 @@ public class LoginController {
 		
 	}
 	
-	public List<ProductEntity> getProduct(){
+	public List<BillDetailEntity> getBillDetail() {
 		Session session = factory.getCurrentSession();
-		String hql = "FROM ProductEntity";
+		String hql = "FROM BillDetailEntity";
 		Query query = session.createQuery(hql);
-		List<ProductEntity> list = query.list();
+		List<BillDetailEntity> list = query.list();
 		return list;
-	}
+		}
 	
-	//lay tat ca color	
-		@ModelAttribute("colorlist")
-		public List<ColorEntity> getColor(){
-			Session session = factory.getCurrentSession();
-			String hql = "FROM ColorEntity";
-			Query query = session.createQuery(hql);
-			List<ColorEntity> list = query.list();
-			return list;
-		}
-	// lay tat ca brand	
-		@ModelAttribute("brandlist")
-		public List<ColorEntity> getBrand(){
-			Session session = factory.getCurrentSession();
-			String hql = "FROM BrandEntity";
-			Query query = session.createQuery(hql);
-			List<ColorEntity> list = query.list();
-			return list;
-		}
+	
 
 }

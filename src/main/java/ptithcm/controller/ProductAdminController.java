@@ -76,6 +76,7 @@ public class ProductAdminController {
 		this.deleteProduct(this.getProduct(id));
 		List<ProductEntity> products = this.getProduct();
 		model.addAttribute("products", products);
+		model.addAttribute("btnStatus", "BtnAdd");
 		 return "product_admin/productadmin";
 	}
 // cap nhat san pham	
@@ -111,6 +112,7 @@ public class ProductAdminController {
 			product.setQuantity(0);
 			product.setDescr("");
 			model.addAttribute("title", "Thêm Sản phẩm");
+			model.addAttribute("btnStatus", "BtnAdd");
 		} else {
 			model.addAttribute("message123", "Update thất bại!");
 			product.setTitle(product.getTitle());
@@ -157,17 +159,15 @@ public class ProductAdminController {
 	
 //xoa san pham
 	public Integer deleteProduct(ProductEntity pd) {
-		Session session = factory.openSession();
-		Transaction t = session.beginTransaction();
+		Session session = factory.getCurrentSession();
+		
 
 		try {
 			session.delete(pd);
-			t.commit();
+			
 		} catch (Exception e) {
-			t.rollback();
+			
 			return 0;
-		} finally {
-			session.close();
 		}
 		return 1;
 	}

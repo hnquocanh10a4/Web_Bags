@@ -53,18 +53,16 @@ public class ManageUserAdminController {
 	}
 	
 	public Integer deleteUser(CustomerEntity us) {
-		Session session = factory.openSession();
-		Transaction t = session.beginTransaction();
+		Session session = factory.getCurrentSession();
+		
 
 		try {
 			session.delete(us);
-			t.commit();
+	
 		} catch (Exception e) {
-			t.rollback();
+		
 			return 0;
-		} finally {
-			session.close();
-		}
+		} 
 		return 1;
 	}
 	public CustomerEntity getUser(Integer id) {
