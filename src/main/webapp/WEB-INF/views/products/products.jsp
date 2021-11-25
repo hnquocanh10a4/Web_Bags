@@ -65,18 +65,18 @@ https://www.tooplate.com/view/2114-pixie
             <div class="nav-wrap__nav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">Home
+                  <a class="nav-link" href="#">Trang chủ
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="products/index.htm">Products</a>
+                  <a class="nav-link" href="products/index.htm">Sản phẩm</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.htm">About Us</a>
+                  <a class="nav-link" href="about.htm">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.htm">Contact Us</a>
+                  <a class="nav-link" href="contact.htm">Liên hệ</a>
                 </li>
               </ul>
             </div>
@@ -95,8 +95,8 @@ https://www.tooplate.com/view/2114-pixie
                 <!-- no cart : nav-cart-no-cart -->
                 <div class="nav-cart-has-cart">
                   <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                  <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
-                  <h3 class="nav-cart-title">Sáº£n pháº©m ÄÃ£ thÃªm</h3>
+                  <span class="nav-cart-no-cart-title">Chưa có sản phẩm nào </span>
+                  <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
                   <ul class="nav-cart-list-item">
                     <li class="nav-cart-item">
                       <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
@@ -157,8 +157,7 @@ https://www.tooplate.com/view/2114-pixie
                     </li>
                   </ul>
                   <div class="nav-cart-wrap-btn-delete">
-                    <a href="" class="nav-cart-item-view-cart">Xem giá»
-                        hÃ ng</a>
+                    <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
                   </div>
                 </div>
               </div>
@@ -169,12 +168,17 @@ https://www.tooplate.com/view/2114-pixie
                 <ul class="nav-login-list">
                   <li class="nav-login-item">
                     
-                    <a href="login.htm" class="nav-login-link-login">ÄÄng nháº­p</a>
+                    <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
                   </li>
                   <li class="nav-login-item">
                     
-                    <a href="register.htm" class="nav-login-link-register">ÄÄng kÃ­</a>
+                    <a href="register.htm" class="nav-login-link-register">Đăng ký</a>
                   </li>
+                  
+                  <li class="nav-login-item">
+
+                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
+                </li>
                 </ul>
                 <span class="nav-login-name">Quá»c Anh</span>
               </div>
@@ -194,7 +198,7 @@ https://www.tooplate.com/view/2114-pixie
           <div class="col-md-4 col-sm-12">
             <div class="section-heading">
               <div class="line-dec"></div>
-              <h1>Featured Items</h1>
+              <h1>Sản phẩm nổi bật</h1>
             </div>
           </div>
           <div class="col-md-8 col-sm-12">

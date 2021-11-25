@@ -64,18 +64,18 @@ https://www.tooplate.com/view/2114-pixie
           <div class="nav-wrap__nav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home
+                <a class="nav-link" href="#">Trang chủ
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="products/index.htm">Products</a>
+                <a class="nav-link" href="products/index.htm">Sản phẩm</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="about.htm">About Us</a>
+                <a class="nav-link" href="about.htm">Giới thiệu</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.htm">Contact Us</a>
+                <a class="nav-link" href="contact.htm">Liên hệ</a>
               </li>
             </ul>
           </div>
@@ -161,7 +161,7 @@ https://www.tooplate.com/view/2114-pixie
                   </li>
                 </ul>
                 <div class="nav-cart-wrap-btn-delete">
-                  <a href="" class="nav-cart-item-view-cart">Xem giỏ
+                  <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ
                     hàng</a>
                 </div>
               </div>
@@ -178,6 +178,11 @@ https://www.tooplate.com/view/2114-pixie
                 <li class="nav-login-item">
 
                   <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
+                </li>
+                
+                <li class="nav-login-item">
+
+                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
                 </li>
               </ul>
               <span class="nav-login-name">Quốc Anh</span>
@@ -222,7 +227,7 @@ https://www.tooplate.com/view/2114-pixie
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Featured Items</h1>
+            <h1>Sản phẩm nổi bật</h1>
           </div>
         </div>
         <div class="col-md-12">

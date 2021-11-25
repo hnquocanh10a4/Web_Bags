@@ -83,20 +83,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <div class="wrap-all">
             <div class="nav-wrap__nav">
-              <ul class="navbar-nav ml-auto">
+             <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="index.html">Home
+                  <a class="nav-link" href="#">Trang chủ
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products/index.htm">Sản phẩm</a>
+                </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="products.html">Products</a>
+                  <a class="nav-link" href="about.htm">Giới thiệu</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
+                  <a class="nav-link" href="contact.htm">Liên hệ</a>
                 </li>
               </ul>
             </div>
@@ -175,7 +175,7 @@
                     </li>
                   </ul>
                   <div class="nav-cart-wrap-btn-delete">
-                    <a href="" class="nav-cart-item-view-cart">Xem giỏ
+                    <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ
                         hàng</a>
                   </div>
                 </div>
@@ -186,13 +186,18 @@
                 <i class="fas fa-user nav-login-icon"></i>
                 <ul class="nav-login-list">
                   <li class="nav-login-item">
-  
-                    <a href="" class="nav-login-link-login">Log in</a>
+                    
+                    <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
                   </li>
                   <li class="nav-login-item">
-  
-                    <a href="" class="nav-login-link-register">Register</a>
+                    
+                    <a href="register.htm" class="nav-login-link-register">Đăng ký</a>
                   </li>
+                  
+                  <li class="nav-login-item">
+
+                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
+                </li>
                 </ul>
                 <span class="nav-login-name">Quốc Anh</span>
                 <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>

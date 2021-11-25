@@ -55,26 +55,26 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <div class="wrap-all">
           <div class="nav-wrap__nav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item active">
-                <a class="nav-link" href="products.html">Products</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact Us</a>
-              </li>
-            </ul>
+             <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                  <a class="nav-link" href="#">Trang chủ
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="products/index.htm">Sản phẩm</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.htm">Giới thiệu</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.htm">Liên hệ</a>
+                </li>
+              </ul>
           </div>
           <div class="cart-search-wrap">
             <div class="nav-search">
-              <input type="text" class="nav-search-input" placeholder="TÃ¬m kiáº¿n trong shop">
+              <input type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
               <button class="nav-search-btn">
                 <i class="fas fa-search nav-search-btn-icon"></i>
               </button>
@@ -85,7 +85,7 @@
               <!-- no cart : nav-cart-no-cart -->
               <div class="nav-cart-has-cart">
                 <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
+                <span class="nav-cart-no-cart-title">Chưa có sản phẩm nào </span>
                 <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
                 <ul class="nav-cart-list-item">
                   <c:forEach var="ca" items="${getCart}">
@@ -111,7 +111,7 @@
               		</c:forEach>
                 </ul>
                 <div class="nav-cart-wrap-btn-delete">
-                  <a href="" class="nav-cart-item-view-cart">Xem chi tiết giỏ hàng</a>
+                  <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
                 </div>
               </div>
             </div>
@@ -120,15 +120,20 @@
             <div class="nav-login nav-login-no-login">
               <i class="fas fa-user nav-login-icon"></i>
               <ul class="nav-login-list">
-                <li class="nav-login-item">
+                  <li class="nav-login-item">
+                    
+                    <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
+                  </li>
+                  <li class="nav-login-item">
+                    
+                    <a href="register.htm" class="nav-login-link-register">Đăng ký</a>
+                  </li>
+                  
+                  <li class="nav-login-item">
 
-                  <a href="" class="nav-login-link-login">Log in</a>
+                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
                 </li>
-                <li class="nav-login-item">
-
-                  <a href="" class="nav-login-link-register">Register</a>
-                </li>
-              </ul>
+                </ul>
               <span class="nav-login-name">Quá»c Anh</span>
               <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
             </div>
@@ -148,7 +153,7 @@
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>Single Product</h1>
+            <h1>Chi tiết sản phẩm</h1>
           </div>
         </div>
      
@@ -176,7 +181,7 @@
             <h6>${pro.price }</h6>
             <p>${pro.descr}</span>
             <form:form action="" method="post" modelAttribute="addCart">
-              <label for="quantity">Quantity:</label>
+              <label for="quantity">Số lượng:</label>
               <input path="quantity" name="quantity" type="quantity" class="quantity-text" id="quantity"
                 onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
                 value="1"></input>
@@ -190,13 +195,13 @@
             <div class="down-content">
               
               <div class="categories">
-                <h6>Brand: <span>${pro.brands.name_brand }</span></h6>
+                <h6>Thương hiệu: <span>${pro.brands.name_brand }</span></h6>
               </div>
               <div class="color">
-                <h6>Color: <span>${pro.colors.name_color }</span></h6>
+                <h6>Màu sắc: <span>${pro.colors.name_color }</span></h6>
               </div>
               <div class="share">
-                <h6>Share: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
+                <h6>Chia sẽ: <span><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i
                         class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-twitter"></i></a></span></h6>
               </div>
              
@@ -216,7 +221,7 @@
         <div class="col-md-12">
           <div class="section-heading">
             <div class="line-dec"></div>
-            <h1>You May Also Like</h1>
+            <h1>Bạn có thể thích</h1>
           </div>
         </div>
         <div class="col-md-12">

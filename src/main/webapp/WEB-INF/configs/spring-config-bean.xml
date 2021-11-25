@@ -24,7 +24,6 @@
 			Photo Credit goes to Pexels website. Aliquam erat volutpat. Pellentesque fringilla, ligula consectetur cursus scelerisque, leo elit pellentesque sapien, et pharetra arcu elit vitae sem. Suspendisse erat dui, condimentum in mi ac, varius tempor sapien. Donec in justo sit amet ex aliquet maximus ac quis erat." />
 		<property name="image" value="resources/assets/images/about-us.jpg" />
 	</bean>
-	<!-- <bean id="uploadfile" class="ptithcm.bean.Uploadfile"> <property name="basePath" 
-		value="D:\\eclipse work space\\Lab5\\src\\main\\webapp\\files\"/> </bean> -->
+	
 
 </beans>
