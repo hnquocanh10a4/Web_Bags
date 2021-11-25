@@ -64,7 +64,7 @@ https://www.tooplate.com/view/2114-pixie
           <div class="nav-wrap__nav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Trang chủ
+                <a class="nav-link" href="index.htm">Trang chủ
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
@@ -93,6 +93,7 @@ https://www.tooplate.com/view/2114-pixie
               <i class="nav-cart-icon fas fa-shopping-cart"></i>
               <!-- no cart : nav-cart-no-cart -->
               <div class="nav-cart-has-cart">
+
                 <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
                 <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
                 <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
@@ -109,49 +110,29 @@ https://www.tooplate.com/view/2114-pixie
                           <span class="nav-cart-item-multiple">x</span>
                           <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
 
+
                         </div>
                       </div>
                       <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                        <span class="nav-cart-item-stock">Màu sắc: ${ca.getPk().getProductEntity().getColors().getName_color() }</span>
                         <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
                       </div>
-                    </div>
-                  </li>
-              		</c:forEach>
-                </ul>
-                <div class="nav-cart-wrap-btn-delete">
-<<<<<<< HEAD
-                  <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ
-                    hàng</a>
-=======
-                  <a href="" class="nav-cart-item-view-cart">Xem chi tiết giỏ hàng</a>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+</div>
+                    </li>
+                 </c:forEach>
+                  </ul>
+                  <div class="nav-cart-wrap-btn-delete">
+                    <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
+                  </div>
+                   
+                  
+                
                 </div>
-              </div>            
+             
               </div>
 
             <!-- nav-login-no-login -->
-<<<<<<< HEAD
-            <div class="nav-login nav-login-no-login">
-              <i class="fas fa-user nav-login-icon"></i>
-              <ul class="nav-login-list">
-                <li class="nav-login-item">
 
-                  <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
-                </li>
-                <li class="nav-login-item">
-
-                  <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
-                </li>
-                
-                <li class="nav-login-item">
-
-                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
-                </li>
-              </ul>
-              <span class="nav-login-name">Quốc Anh</span>
-            </div>
-=======
             <div class="nav-login ${loginStatus} }">
                 <i class="fas fa-user nav-login-icon"></i>
                 <ul class="nav-login-list">
@@ -163,11 +144,15 @@ https://www.tooplate.com/view/2114-pixie
                     
                     <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
                   </li>
+                   <li class="nav-login-item">
+
+                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
+                	</li>
                 </ul>
                 <span class="nav-login-name"> ${currentUser}</span>
                 <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
               </div>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+
 
           </div>
         </div>

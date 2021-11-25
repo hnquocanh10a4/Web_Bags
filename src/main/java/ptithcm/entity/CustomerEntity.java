@@ -32,7 +32,7 @@ public class CustomerEntity {
 	private RoleEntity roles;
 	@Column(name="NAME")
 	@NotEmpty(message ="Tên không được để trống !")
-	@Pattern(regexp = "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ_.]*" , message ="Tên chỉ chứa các kí tự chữ !")
+	@Pattern(regexp = "[a-zA-ZÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ_ .]*" , message ="Tên chỉ chứa các kí tự chữ !")
 	private String name;
 	@Column(name="USERNAME")
 	@NotEmpty(message ="Username không được để trống !")

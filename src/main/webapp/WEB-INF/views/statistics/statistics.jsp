@@ -46,49 +46,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="navbar-mobile">
-                <div class="container-fluid">
-                    <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-<<<<<<< HEAD
-                                <i class="fas fa-tachometer-alt"></i>Thông kê</a>
-=======
-                                <i class="fas fa-tachometer-alt"></i>Thống kê</a>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
-                           
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Liên hệ</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tài khoản</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-<<<<<<< HEAD
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                       
-                      
-=======
-                                <i class="far fa-check-square"></i>Quản lý sản phẩm</a>
-                        </li>
-                        
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
-                    </ul>
-                </div>
-            </nav>
+           
         </header>
         <!-- END HEADER MOBILE-->
 
@@ -103,42 +61,39 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-<<<<<<< HEAD
-                                <i class="fas fa-tachometer-alt"></i>THống kê</a>
-                            
-=======
+                            <a class="js-arrow" href="statistics.htm">
+
                                 <i class="fas fa-tachometer-alt"></i>Thống kê</a>
                       
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
-                        </li>
-                        <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Liên hệ</a>
-                        </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tài khoản</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-<<<<<<< HEAD
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="calendar.html">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
+
                         </li>
                        
-=======
-                                <i class="far fa-check-square"></i>Sản phẩm</a>
+                       <li class="active has-sub">
+                            <a class="js-arrow" href="contact.htm">
+
+                                <i class="fas fa-tachometer-alt"></i>Liên hệ</a>
+                      
+
                         </li>
                         
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="users.htm">
+
+                                <i class="fas fa-tachometer-alt"></i>Tài khoản</a>
+                      
+
+                        </li>
+                        
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="product.htm">
+
+                                <i class="fas fa-tachometer-alt"></i>Sản phẩm</a>
+                      
+
+                        </li>
+                              
+                        
+
                     </ul>
                 </nav>
             </div>

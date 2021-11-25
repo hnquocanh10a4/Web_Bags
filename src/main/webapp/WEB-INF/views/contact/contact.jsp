@@ -64,7 +64,7 @@ https://www.tooplate.com/view/2114-pixie
             <div class="nav-wrap__nav">
              <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">Trang chủ
+                  <a class="nav-link" href="index.htm">Trang chủ
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
@@ -81,14 +81,11 @@ https://www.tooplate.com/view/2114-pixie
             </div>
             <div class="cart-search-wrap">
               <div class="nav-search">
-<<<<<<< HEAD
-                <input type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
-                <button class="nav-search-btn">
-=======
+
                 <form action="http://localhost:8080/Web_Bags/products/index.htm">
                 <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
                 <button name="btnsearch" class="nav-search-btn">
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+
                   <i class="fas fa-search nav-search-btn-icon"></i>
                 </button>
                 </form>
@@ -97,48 +94,8 @@ https://www.tooplate.com/view/2114-pixie
               <div class="nav-cart">
                 <i class="nav-cart-icon fas fa-shopping-cart"></i>
                 <!-- no cart : nav-cart-no-cart -->
-                <div class="nav-cart-has-cart">
-<<<<<<< HEAD
-                  <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                  <span class="nav-cart-no-cart-title">Chưa có sản phẩm nào </span>
-                  <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
-                  <ul class="nav-cart-list-item">
-                    <li class="nav-cart-item">
-                      <img src="https://cdn1.jolicloset.com/img4/detail4b/2020/06/196114-1/handbags-dior.jpg" alt=""
-                        class="nav-cart-item-img">
-                      <div class="nav-cart-item-detail">
-                        <div class="nav-cart-item-head">
-                          <h4 class="nav-cart-item-name">Dior Lady Dior Medium Bag</h4>
-                          <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">21.000.000Ä</span>
-                            <span class="nav-cart-item-multiple">x</span>
-                            <span class="nav-cart-item-quantity">2</span>
-  
-                          </div>
-                        </div>
-                        <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="nav-cart-item">
-                      <img src="https://images.stockx.com/images/Dior-x-Shawn-Saddle-Bag-Blue.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&dpr=2&trim=color&trimcolor=ffffff&updated_at=1606317582" alt=""
-                        class="nav-cart-item-img">
-                      <div class="nav-cart-item-detail">
-                        <div class="nav-cart-item-head">
-                          <h4 class="nav-cart-item-name">Dior And Shawn Saddle</h4>
-                          <div class="nav-cart-item-wrap">
-                            <span class="nav-cart-item-price">99.000.000Ä</span>
-                            <span class="nav-cart-item-multiple">x</span>
-                            <span class="nav-cart-item-quantity">1</span>
-  
-                          </div>
-                        </div>
-                        <div class="nav-cart-item-body">
-                          <span class="nav-cart-item-stock">MÃ u sáº¯c: xanh</span>
-                          <span class="nav-cart-item-delete">XÃ³a</span>
-=======
+               <div class="nav-cart-has-cart">
+
                 <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
                 <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
                 <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
@@ -155,29 +112,25 @@ https://www.tooplate.com/view/2114-pixie
                           <span class="nav-cart-item-multiple">x</span>
                           <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
 
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+
                         </div>
                       </div>
                       <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                        <span class="nav-cart-item-stock">Màu sắc: ${ca.getPk().getProductEntity().getColors().getName_color() }</span>
                         <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
                       </div>
-<<<<<<< HEAD
+</div>
                     </li>
+                 </c:forEach>
                   </ul>
                   <div class="nav-cart-wrap-btn-delete">
                     <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
                   </div>
-=======
-                    </div>
-                  </li>
-              		</c:forEach>
-                </ul>
-                <div class="nav-cart-wrap-btn-delete">
-                  <a href="" class="nav-cart-item-view-cart">Xem chi tiết giỏ hàng</a>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+                   
+                  
+                
                 </div>
-              </div>
+             
               </div>
   
               <!-- nav-login-no-login -->
@@ -189,18 +142,21 @@ https://www.tooplate.com/view/2114-pixie
                     <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
                   </li>
                   <li class="nav-login-item">
-                    
-<<<<<<< HEAD
-                    <a href="register.htm" class="nav-login-link-register">Đăng ký</a>
-=======
+                   
+
                     <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+                    
+
+                  </li>
+                    <li class="nav-login-item">
+                   
+
+                  
+                    <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
+
                   </li>
                   
-                  <li class="nav-login-item">
-
-                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
-                </li>
+                  
                 </ul>
                 <span class="nav-login-name"> ${currentUser}</span>
                 <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>

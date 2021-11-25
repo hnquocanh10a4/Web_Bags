@@ -57,7 +57,7 @@
           <div class="nav-wrap__nav">
              <ul class="navbar-nav ml-auto">
                 <li class="nav-item ">
-                  <a class="nav-link" href="#">Trang chủ
+                  <a class="nav-link" href="index.htm">Trang chủ
                     <span class="sr-only">(current)</span>
                   </a>
                 </li>
@@ -74,27 +74,23 @@
           </div>
           <div class="cart-search-wrap">
             <div class="nav-search">
-<<<<<<< HEAD
-              <input type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
-              <button class="nav-search-btn">
-                <i class="fas fa-search nav-search-btn-icon"></i>
-              </button>
-=======
+
               <form action="http://localhost:8080/Web_Bags/products/index.htm">
                 <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
                 <button name="btnsearch" class="nav-search-btn">
                   <i class="fas fa-search nav-search-btn-icon"></i>
                 </button>
                 </form>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+
             </div>
 
             <div class="nav-cart">
               <i class="nav-cart-icon fas fa-shopping-cart"></i>
               <!-- no cart : nav-cart-no-cart -->
               <div class="nav-cart-has-cart">
+
                 <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                <span class="nav-cart-no-cart-title">Chưa có sản phẩm nào </span>
+                <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
                 <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
                 <ul class="nav-cart-list-item">
                   <c:forEach var="ca" items="${getCart}">
@@ -109,21 +105,26 @@
                           <span class="nav-cart-item-multiple">x</span>
                           <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
 
+
                         </div>
                       </div>
                       <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">Màu sắc: xanh</span>
+                        <span class="nav-cart-item-stock">Màu sắc: ${ca.getPk().getProductEntity().getColors().getName_color() }</span>
                         <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
                       </div>
-                    </div>
-                  </li>
-              		</c:forEach>
-                </ul>
-                <div class="nav-cart-wrap-btn-delete">
-                  <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
+</div>
+                    </li>
+                 </c:forEach>
+                  </ul>
+                  <div class="nav-cart-wrap-btn-delete">
+                    <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
+                  </div>
+                   
+                  
+                
                 </div>
+             
               </div>
-            </div>
 
             <!-- nav-login-no-login -->
             <div class="nav-login ${loginStatus}">
@@ -142,13 +143,10 @@
 
                   <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
                 </li>
-<<<<<<< HEAD
-                </ul>
-              <span class="nav-login-name">Quá»c Anh</span>
-=======
+
               </ul>
               <span class="nav-login-name">${currentUser}</span>
->>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
+
               <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
             </div>
 
