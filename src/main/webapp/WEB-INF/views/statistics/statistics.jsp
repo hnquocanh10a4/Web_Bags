@@ -51,19 +51,24 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
+<<<<<<< HEAD
                                 <i class="fas fa-tachometer-alt"></i>Thông kê</a>
+=======
+                                <i class="fas fa-tachometer-alt"></i>Thống kê</a>
+>>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
                            
                         </li>
                         <li>
                             <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                                <i class="fas fa-chart-bar"></i>Liên hệ</a>
                         </li>
                         <li>
                             <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Tài khoản</a>
                         </li>
                         <li>
                             <a href="form.html">
+<<<<<<< HEAD
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
@@ -76,6 +81,11 @@
                         </li>
                        
                       
+=======
+                                <i class="far fa-check-square"></i>Quản lý sản phẩm</a>
+                        </li>
+                        
+>>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
                     </ul>
                 </div>
             </nav>
@@ -94,19 +104,25 @@
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
                             <a class="js-arrow" href="#">
+<<<<<<< HEAD
                                 <i class="fas fa-tachometer-alt"></i>THống kê</a>
                             
+=======
+                                <i class="fas fa-tachometer-alt"></i>Thống kê</a>
+                      
+>>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
                         </li>
                         <li>
                             <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                                <i class="fas fa-chart-bar"></i>Liên hệ</a>
                         </li>
                         <li>
                             <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
+                                <i class="fas fa-table"></i>Tài khoản</a>
                         </li>
                         <li>
                             <a href="form.html">
+<<<<<<< HEAD
                                 <i class="far fa-check-square"></i>Forms</a>
                         </li>
                         <li>
@@ -118,6 +134,11 @@
                                 <i class="fas fa-map-marker-alt"></i>Maps</a>
                         </li>
                        
+=======
+                                <i class="far fa-check-square"></i>Sản phẩm</a>
+                        </li>
+                        
+>>>>>>> 8167a418a0a55e84de51f01cfa62c71483db9d22
                     </ul>
                 </nav>
             </div>
