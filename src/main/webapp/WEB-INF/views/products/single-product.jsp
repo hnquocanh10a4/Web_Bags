@@ -34,128 +34,7 @@
 <body>
 
   <!-- Pre Header -->
-  <div id="pre-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <span>Suspendisse laoreet magna vel diam lobortis imperdiet</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-    <div class="container">
-      <a class="navbar-brand" href="#"><img src="assets/images/header-logo.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <div class="wrap-all">
-          <div class="nav-wrap__nav">
-             <ul class="navbar-nav ml-auto">
-                <li class="nav-item ">
-                  <a class="nav-link" href="index.htm">Trang chủ
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="products/index.htm">Sản phẩm</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="about.htm">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.htm">Liên hệ</a>
-                </li>
-              </ul>
-          </div>
-          <div class="cart-search-wrap">
-            <div class="nav-search">
-
-              <form action="http://localhost:8080/Web_Bags/products/index.htm">
-                <input name ="searchInput" type="text" class="nav-search-input" placeholder="Tìm kiếm trong shop">
-                <button name="btnsearch" class="nav-search-btn">
-                  <i class="fas fa-search nav-search-btn-icon"></i>
-                </button>
-                </form>
-
-            </div>
-
-            <div class="nav-cart">
-              <i class="nav-cart-icon fas fa-shopping-cart"></i>
-              <!-- no cart : nav-cart-no-cart -->
-              <div class="nav-cart-has-cart">
-
-                <img src="https://uchimart.com/assets/images/no-cart.png" alt="no cart" class="nav-cart-no-cart-img">
-                <span class="nav-cart-no-cart-title">ChÆ°a cÃ³ sáº£n pháº©m nÃ o </span>
-                <h3 class="nav-cart-title">Sản phẩm đã thêm</h3>
-                <ul class="nav-cart-list-item">
-                  <c:forEach var="ca" items="${getCart}">
-                  <li class="nav-cart-item">
-                    <img src="<c:url value='/resources/assets/images/${ca.getPk().getProductEntity().getImage() }.jpg'/>" alt=""
-                      class="nav-cart-item-img">
-                    <div class="nav-cart-item-detail">
-                      <div class="nav-cart-item-head">
-                        <h4 class="nav-cart-item-name">${ca.getPk().getProductEntity().getTitle() }</h4>
-                        <div class="nav-cart-item-wrap">
-                          <span class="nav-cart-item-price">${ca.getPk().getProductEntity().getPrice() }</span>
-                          <span class="nav-cart-item-multiple">x</span>
-                          <span class="nav-cart-item-quantity">${ca.getQuantity() }</span>
-
-
-                        </div>
-                      </div>
-                      <div class="nav-cart-item-body">
-                        <span class="nav-cart-item-stock">Màu sắc: ${ca.getPk().getProductEntity().getColors().getName_color() }</span>
-                        <a href="singleproduct/${ca.getPk().getProductEntity().getId_product()}.htm?delete" class="nav-cart-item-delete">Xóa</a>
-                      </div>
-</div>
-                    </li>
-                 </c:forEach>
-                  </ul>
-                  <div class="nav-cart-wrap-btn-delete">
-                    <a href="bill/index.htm" class="nav-cart-item-view-cart">Xem giỏ hàng</a>
-                  </div>
-                   
-                  
-                
-                </div>
-             
-              </div>
-
-            <!-- nav-login-no-login -->
-            <div class="nav-login ${loginStatus}">
-              <i class="fas fa-user nav-login-icon"></i>
-              <ul class="nav-login-list">
-                  <li class="nav-login-item">
-                    
-                    <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
-                  </li>
-                  <li class="nav-login-item">
-                    
-                    <a href="register.htm" class="nav-login-link-register">Đăng ký</a>
-                  </li>
-                  
-                  <li class="nav-login-item">
-
-                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
-                </li>
-
-              </ul>
-              <span class="nav-login-name">${currentUser}</span>
-
-              <a href="#" class="fas fa-sign-out-alt nav-login-icon"></a>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </nav>
+    <%@include file="/WEB-INF/views/include/header.jsp" %>
 
   <!-- Page Content -->
   <!-- Single Starts Here -->
@@ -176,7 +55,7 @@
             <div id="slider" class="flexslider">
               <ul class="slides">
                 <li>
-                  <img src="<c:url value='/resources/assets/images/${pro.image}.jpg'/>" />
+                  <img src="<c:url value='/resources/assets/images/${pro.image}'/>" />
                 </li>
           
               </ul>
@@ -227,32 +106,7 @@
 
 
   <!-- Similar Starts Here -->
-  <div class="featured-items">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h1>Bạn có thể thích</h1>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="owl-carousel owl-theme">
-           <c:forEach var="pd1" items="${products}"> 
-            <a href="singleproduct.htm?id=${pd1.id_product }">
-              <div class="featured-item">
-                <img src="<c:url value='/resources/assets/images/${pd1.image}.jpg'/>" >
-                <h4>${pd1.title}</h4>
-                <h6>${pd1.price}</h6>
-              </div>
-            </a>
-           
-             </c:forEach>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+   <%@include file="/WEB-INF/views/include/email.jsp" %>
   <!-- Similar Ends Here -->
 
 
@@ -300,55 +154,7 @@
 
 
   <!-- Footer Starts Here -->
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="logo">
-            <img src="assets/images/header-logo.png" alt="">
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="footer-menu">
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Help</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">How It Works ?</a></li>
-              <li><a href="#">Contact Us</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="social-icons">
-            <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-rss"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Footer Ends Here -->
-
-
-  <!-- Sub Footer Starts Here -->
-  <div class="sub-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copyright-text">
-            <p>Copyright &copy; 2019 Company Name
-
-              - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+   <%@include file="/WEB-INF/views/include/footer.jsp" %>
   <!-- Sub Footer Ends Here -->
 
 

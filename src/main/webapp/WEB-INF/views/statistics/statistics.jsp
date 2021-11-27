@@ -11,18 +11,19 @@
     <meta name="description" content="au theme template">
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
-
+	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
     <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="<c:url value='/resources/vendor1/css/font-face.css'/>" rel="stylesheet" media="all">
-    <link href="<c:url value='resources/vendor1/font-awesome-5/css/fontawesome-all.min.css'/>/" rel="stylesheet" media="all">
+    <link href="<c:url value='/resources/vendor1/font-awesome-5/css/fontawesome-all.min.css'/>" rel="stylesheet" media="all">
     <link href="<c:url value='/resources/vendor1/mdi-font/css/material-design-iconic-font.min.css'/>" rel="stylesheet" media="all">
 
     <!-- Bootstrap CSS-->
     <link href="<c:url value='/resources/vendor1/bootstrap-4.1/bootstrap.min.css'/>" rel="stylesheet" media="all">
-	<link href="<c:url value='/resources/vendor1/css/theme.css'/>" rel="stylesheet" media="all">
+	<link href="<c:url value='/resources/vendor1/css/theme.css'/>" rel="stylesheet" media="all"> 
+    <link rel="stylesheet" href="<c:url value='/resources/vendor1/css/style.css'/>">
 
  
 
@@ -31,73 +32,7 @@
 <body class="animsition">
     <div class="page-wrapper">
         <!-- HEADER MOBILE-->
-        <header class="header-mobile d-block d-lg-none">
-            <div class="header-mobile__bar">
-                <div class="container-fluid">
-                    <div class="header-mobile-inner">
-                        <a class="logo" href="index.html">
-                            <img src="vendor1/images/icon/logo.png" alt="CoolAdmin" />
-                        </a>
-                        <button class="hamburger hamburger--slider" type="button">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-           
-        </header>
-        <!-- END HEADER MOBILE-->
-
-        <!-- MENU SIDEBAR-->
-        <aside class="menu-sidebar d-none d-lg-block">
-            <div class="logo">
-                <a href="#">
-                    <img src="vendor1/images/icon/logo.png" alt="Cool Admin" />
-                </a>
-            </div>
-            <div class="menu-sidebar__content js-scrollbar1">
-                <nav class="navbar-sidebar">
-                    <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="statistics.htm">
-
-                                <i class="fas fa-tachometer-alt"></i>Thống kê</a>
-                      
-
-                        </li>
-                       
-                       <li class="active has-sub">
-                            <a class="js-arrow" href="contact.htm">
-
-                                <i class="fas fa-tachometer-alt"></i>Liên hệ</a>
-                      
-
-                        </li>
-                        
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="users.htm">
-
-                                <i class="fas fa-tachometer-alt"></i>Tài khoản</a>
-                      
-
-                        </li>
-                        
-                        <li class="active has-sub">
-                            <a class="js-arrow" href="product.htm">
-
-                                <i class="fas fa-tachometer-alt"></i>Sản phẩm</a>
-                      
-
-                        </li>
-                              
-                        
-
-                    </ul>
-                </nav>
-            </div>
-        </aside>
+       <%@include file="/WEB-INF/views/include/sidebar.jsp" %>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
@@ -227,7 +162,10 @@
     <script src="<c:url value='/resources/vendor1/jquery-3.2.1.min.js'/>"></script>
 
     <script src="<c:url value='/resources/vendor1/chartjs/Chart.bundle.min.js'/>"></script>
-
+	 <script src="<c:url value='resources/vendor1/jquery-3.2.1.min.js'/>/"></script>
+    <script src="<c:url value='/resources/vendor1/bootstrap-4.1/popper.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor1/animsition/animsition.min.js'/>"></script>
+    <script src="<c:url value='/resources/vendor1/js/main.js'/>"></script>
     <script src="<c:url value='/resources/vendor1/js/main.js'/>"></script>
 
 </body>
