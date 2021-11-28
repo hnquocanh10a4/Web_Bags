@@ -125,7 +125,7 @@ public class SingleProductController {
 		model.addAttribute("pro", pro);
 		List<ProductEntity> products = this.getProducts();
 		model.addAttribute("products", products);
-		return "products/single-product";
+		return "redirect:/products/index.htm";
 	}
 	
 	

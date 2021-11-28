@@ -15,6 +15,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ptithcm.entity.CartEntity;
+import ptithcm.entity.ProductEntity;
 
 @Transactional
 @Controller
@@ -37,6 +38,8 @@ public class IndexController {
 			List<CartEntity> getCart = this.getCart(id);
 			model.addAttribute("getCart", getCart);
 		}
+		List<ProductEntity> getPro = this.getProducts();
+		model.addAttribute("getPro", getPro);
 		
 		return "index";
 	}
@@ -54,6 +57,14 @@ public class IndexController {
 		Query query = session.createQuery(hql);
 		query.setParameter("id", id);
 		List<CartEntity> list = query.list();
+		return list;
+	}
+	
+	public List<ProductEntity> getProducts(){
+		Session session = factory.getCurrentSession();
+		String hql = "FROM ProductEntity";
+		Query query = session.createQuery(hql);
+		List<ProductEntity> list = query.list();
 		return list;
 	}
 }
