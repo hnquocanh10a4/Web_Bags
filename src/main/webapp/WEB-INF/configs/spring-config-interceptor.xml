@@ -20,7 +20,14 @@
 			<mvc:mapping path="/admin/**"/>
 			<mvc:mapping path="/singleproduct.htm"/>
 			 <mvc:mapping path="/bill/**"/> 
+			 <mvc:mapping path="/purchase.htm"/>
 			<bean class="ptithcm.interceptor.SecurityInterceptor" />
+			
+		</mvc:interceptor>
+		
+		 <mvc:interceptor>
+			<mvc:mapping path="/admin/**"/>
+			<bean class="ptithcm.interceptor.LogginIinterceptor" />
 			
 		</mvc:interceptor>
 	</mvc:interceptors>

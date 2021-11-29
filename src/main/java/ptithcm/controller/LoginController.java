@@ -35,7 +35,9 @@ public class LoginController {
 	SessionFactory factory;
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
-	public String login(ModelMap model, @ModelAttribute("register") CustomerEntity user ) {
+	public String login(ModelMap model, @ModelAttribute("register") CustomerEntity user, HttpServletRequest request ) {
+		HttpSession session = request.getSession();
+		session.setAttribute("username", null);
 		return "login/login1";
 	}
 
@@ -69,7 +71,7 @@ public class LoginController {
 			for (CustomerEntity userLogin : users) {
 				if (userLogin.getUsername().equals(username) && userLogin.getPassword().equals(password) ) {
 					model.addAttribute("mess", "Đăng nhập thành công");
-					HttpSession session1 = request.getSession();
+					session.setAttribute("id_role", userLogin.getRoles().getId_role());
 					session.setAttribute("username", username);
 					if(userLogin.getRoles().getId_role() == 0) {
 						

@@ -1,5 +1,6 @@
 package ptithcm.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ptithcm.entity.BillDetailEntity;
+import ptithcm.entity.BillEntity;
 import ptithcm.entity.CartEntity;
 
 
@@ -28,6 +30,7 @@ public class PurcharOrderController {
 	public String index(ModelMap model,HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		String currentUser = (String) session.getAttribute("username");
+		int id = this.getIDUser(currentUser);
 		if(currentUser == null )
 		{
 			model.addAttribute("loginStatus", "nav-login-no-login");
@@ -37,21 +40,25 @@ public class PurcharOrderController {
 		{
 			model.addAttribute("loginStatus", "");
 			model.addAttribute("currentUser", currentUser);
-			int id = this.getIDUser(currentUser);
 			List<CartEntity> getCart = this.getCart(id);
 			model.addAttribute("getCart", getCart);
 		}
-		
-		List<BillDetailEntity> purchase = this.getProductinBillDetail();
-		model.addAttribute("purchase", purchase);
+		List<BillDetailEntity> listBillDT =  new ArrayList<BillDetailEntity>();
+		List<BillEntity> billList = this.getBill(id);
+		for(BillEntity bill : billList) {
+			listBillDT.addAll(this.getProductinBillDetail(bill.getId_bill()));
+		}	
+//		System.out.print(listBillDT.get(0).getPk().getProductEntity());
+		model.addAttribute("purchase", listBillDT);
 		return "bill/purchase-order";
 	}
 	
 	
-	public List<BillDetailEntity> getProductinBillDetail(){
+	public List<BillDetailEntity> getProductinBillDetail(int id){
 		Session session = factory.getCurrentSession();
-		String hql = "FROM BillDetailEntity";
+		String hql = "FROM BillDetailEntity where ID_BILL = :id";
 		Query query = session.createQuery(hql);
+		query.setParameter("id", id);
 		List<BillDetailEntity> list = query.list();
 		return list;
 	}
@@ -70,6 +77,15 @@ public class PurcharOrderController {
 		Query query = session.createQuery(hql);
 		query.setParameter("id", id);
 		List<CartEntity> list = query.list();
+		return list;
+	}
+	
+	public List<BillEntity> getBill(Integer id){
+		Session session = factory.getCurrentSession();
+		String hql = "FROM BillEntity where ID_USER = :id";
+		Query query = session.createQuery(hql);
+		query.setParameter("id", id);
+		List<BillEntity> list = query.list();
 		return list;
 	}
 	
