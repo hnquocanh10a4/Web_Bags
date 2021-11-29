@@ -1,5 +1,6 @@
 package ptithcm.controller;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ptithcm.entity.BillEntity;
+import ptithcm.entity.CartEntity;
+import ptithcm.entity.CartPK;
 import ptithcm.entity.CustomerEntity;
 import ptithcm.entity.ProductEntity;
 
@@ -30,16 +34,37 @@ public class ManageUserAdminController {
 	public String showUsers( ModelMap model){
 		List<CustomerEntity> users = this.getCustomers();
 		model.addAttribute("users", users);
+		
+		 
 		return "manage-users-admin/manageUsers";
 	}
 	
 	
 	@RequestMapping(value="users/{id}.htm",params = "delete")
 	public String delete(ModelMap model, @PathVariable("id") Integer id) {
-		this.deleteUser(this.getUser(id));
+		List<CartEntity> idUser  =this.getIdUserInCart();
+		
+		for (CartEntity item : idUser) {
+			System.out.println(item.getPk().getCustomerEntity().getId_user());
+			if (id==item.getPk().getCustomerEntity().getId_user()) {
+				model.addAttribute("errDe", "Tài khoản đã mua hàng không thể xóa");
+				List<CustomerEntity> users = this.getCustomers();
+				model.addAttribute("users", users);
+				return "manage-users-admin/manageUsers";
+			}
+		}
+		
+		List<Integer> idBill = this.getIdUserInBill();
+		for (Integer item1 : idBill) {
+			if (id==item1) {
+				model.addAttribute("errDe", "Tài khoản đã mua hàng không thể xóa");
+				List<CustomerEntity> users = this.getCustomers();
+				model.addAttribute("users", users);
+				return "manage-users-admin/manageUsers";
+			}
+		}
+		this.deleteUser(this.getUser(id));	
 		List<CustomerEntity> users = this.getCustomers();
-		
-		
 		model.addAttribute("users", users);
 		return "manage-users-admin/manageUsers";
 	}
@@ -71,6 +96,21 @@ public class ManageUserAdminController {
 		Query query = session.createQuery(hql);
 		query.setParameter("id", id);
 		CustomerEntity list =(CustomerEntity) query.list().get(0);
+		return list;
+	}
+	public List<CartEntity> getIdUserInCart() {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM CartEntity";
+		Query query = session.createQuery(hql);
+		List<CartEntity> list = query.list();
+		return list;
+	}
+	
+	public List<Integer> getIdUserInBill() {
+		Session session = factory.getCurrentSession();
+		String hql = "select id_user FROM BillEntity";
+		Query query = session.createQuery(hql);
+		List<Integer> list = query.list();
 		return list;
 	}
 }

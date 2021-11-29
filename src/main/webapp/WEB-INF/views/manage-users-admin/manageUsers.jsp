@@ -76,6 +76,7 @@
                 <h3>Users</h3>
                 <div class="content-top">
                     <h4>All Users</h4>
+                     <p class="err-user">${errDe }</p>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -94,6 +95,7 @@
                                     <h4>${users.name }</h4>
                                     <p>${users.email }</p>
                                     <p>Địa chỉ : ${users.address_customer }</p>
+                                   
                                 </td>
 
                                 <td>${users.roles.role }</td>
