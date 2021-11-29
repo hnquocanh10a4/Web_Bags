@@ -24,15 +24,15 @@ public class MailController {
 			helper.setFrom("hmq.oketi@gmail.com", "Công ty QA");
 			helper.setTo(to);
 			helper.setSubject("thank to subcribe");
-			helper.setText("cảm ơn bạn đã đăng ky cho chúng tôi ", true);
+			helper.setText("cảm ơn bạn đã đăng ký cho chúng tôi ", true);
 			mailer.send(mail);
-			model.addAttribute("mess", "Gửi mail thành công");
+//			model.addAttribute("mess", "Gửi mail thành công");
 			
 		}catch(Exception e){
 			model.addAttribute("mess", "Gửi mail thất bại");
 		
 		}
-		return "index";
+		return "redirect:/index.htm";
 	}
 	
 }

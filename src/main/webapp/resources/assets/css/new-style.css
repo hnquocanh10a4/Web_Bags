@@ -327,6 +327,12 @@
     will-change: opacity, transform;
 }
 
+.fade-in-side{
+	transform-origin: top center;
+    animation: fadeIn ease 2s;
+    will-change: opacity, transform;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

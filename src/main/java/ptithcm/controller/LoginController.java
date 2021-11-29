@@ -88,7 +88,7 @@ public class LoginController {
 						model.addAttribute("billDetailEntities", billDetailEntities);
 						return "statistics/statistics";
 					}else {
-						return "index";
+						return "redirect:/index.htm";
 					}
 									
 				}

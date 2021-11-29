@@ -48,7 +48,7 @@ https://www.tooplate.com/view/2114-pixie
     <!-- About Page Starts Here -->
     <div class="contact-page">
       <div class="container">
-        <div class="row">
+        <div class="row fade-in-side">
           <div class="col-md-12">
             <div class="section-heading">
               <div class="line-dec"></div>

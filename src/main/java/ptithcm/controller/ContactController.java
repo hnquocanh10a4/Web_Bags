@@ -81,7 +81,7 @@ public class ContactController {
 		}
 		List<ShopEntity> shop = this.getContact();
 		model.addAttribute("shop", shop);
-		return "contact/contact";
+		return "redirect:/contact.htm";
 	}
 	
 	public Integer getIDUser(String username) {
