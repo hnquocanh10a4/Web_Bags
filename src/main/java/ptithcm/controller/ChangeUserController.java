@@ -57,7 +57,7 @@ public class ChangeUserController {
 		System.out.println(user.isSex());
 		if (temp != 0) {
 			System.out.println("success");
-			return "redirect:/";
+			return "redirect:/index.htm";
 		} else {
 			System.out.println("failed");
 			

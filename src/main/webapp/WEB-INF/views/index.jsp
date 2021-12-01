@@ -52,16 +52,13 @@ https://www.tooplate.com/view/2114-pixie
       <div class="row">
         <div class="col-md-12">
           <div class="caption">
-            <h2>Ecommerce HTML Template</h2>
+            <h2>DẪN ĐẦU XU HƯỚNG THỜI TRANG</h2>
             <div class="line-dec"></div>
-            <p>Pixie HTML Template can be converted into your desired CMS theme. Total <strong>5 pages</strong>
-              included. You can use this Bootstrap v4.1.3 layout for any CMS.
-              <br><br>Please tell your friends about <a rel="nofollow"
-                href="https://www.facebook.com/tooplate/">Tooplate</a> free template site. Thank you. Photo credit goes
-              to <a rel="nofollow" href="https://www.pexels.com">Pexels website</a>.
+            <p>QA shop hiện đang sở hữu hệ thống bán hơn 60 thương hiệu sang trọng và đẳng cấp cùng kênh thương mại điện tử được đầu tư bài bản.
+              <br><br>Sứ mệnh của chúng tôi là "Đưa sản phẩm thời trang có chất liệu tốt, dịch vụ tốt đến tận tay khách hàng tại các vùng miền Việt Nam và trên Thế Giới".
             </p>
             <div class="main-button">
-              <a href="products.html">Order Now!</a>
+              <a href="products/index.htm">Mua ngay!</a>
             </div>
           </div>
         </div>
@@ -83,7 +80,7 @@ https://www.tooplate.com/view/2114-pixie
         <div class="col-md-12">
           <div class="owl-carousel owl-theme">
           <c:forEach var="pd" items="${getPro}">
-            <a href="single-product.html">
+            <a href="http://localhost:8080/Web_Bags/singleproduct.htm?id=${pd.getId_product() }">
               <div class="featured-item">
                 <img src="<c:url value='/resources/assets/images/${pd.image}' />" alt="">
                 <h4>${pd.getTitle() }</h4>

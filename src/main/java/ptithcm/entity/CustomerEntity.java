@@ -45,7 +45,7 @@ public class CustomerEntity {
 	@NotEmpty(message ="Địa chỉ không được để trống !")
 	private String address_customer;
 	@Column(name="EMAIL")
-	@NotEmpty(message ="Email được để trống !")
+	@NotEmpty(message ="Email không được để trống !")
 	@Email(message ="Sai định dạng email !")
 	private String email;
 	@Column(name="PHONE")

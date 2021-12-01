@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 @Entity
 @Table(name="CONTACT")
 public class ContactEntity {
@@ -14,12 +17,16 @@ public class ContactEntity {
 	@Column(name="ID_CONTACT")
 	private int id_contact;
 	@Column(name="NAME")
+	@NotEmpty(message ="Tên không được để trống")
 	private String name;
 	@Column(name="EMAIL")
+	@NotEmpty(message ="Email không được để trống")
+	@Email(message ="Sai định dạng email ")
 	private String email;
 	@Column(name="TOPIC")
 	private String topic;
 	@Column(name="[CONTENT]")
+	@NotEmpty(message ="Nội dung không được để trống !")
 	private String content;
 	public int getId_contact() {
 		return id_contact;

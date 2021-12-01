@@ -73,16 +73,20 @@
 
             <!-- MAIN CONTENT-->
             <div class="main-content">
-                <h3>Users</h3>
+            	<div class="users-top">
+            		<h1>Tài khoản</h1>
+                	<a href="login.htm"><i class="fas fa-sign-out-alt admin-out"></i></a>
+            	</div>
+                
                 <div class="content-top">
-                    <h4>All Users</h4>
+                    <h4>Tất cả tài khoản</h4>
                      <p class="err-user">${errDe }</p>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th style="min-width:300px">User details</th>
-                                <th style="width:120px">Role</th>
-                                <th style="min-width:110px;">Actions</th>
+                                <th style="min-width:300px">Chi tiết tài khoản</th>
+                                <th style="width:120px">Quyền</th>
+                                <th style="min-width:110px;">Xóa</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -14,9 +14,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ptithcm.entity.CartEntity;
 import ptithcm.entity.ContactEntity;
@@ -62,26 +65,42 @@ public class ContactController {
 		return list;
 	}
 	@RequestMapping(value = "contact", method = RequestMethod.POST)
-	public String insert(ModelMap model, @ModelAttribute("contact") ContactEntity contact) {
-		System.out.println(contact.getName());
-		System.out.println(contact.getEmail());
-		System.out.println(contact.getTopic());
-		System.out.println(contact.getContent());
+	public String insert(HttpServletRequest request,ModelMap model,@Validated @ModelAttribute("contact")
+	 ContactEntity contact, BindingResult errors,@RequestParam("name") String name,
+	 @RequestParam("email") String email,
+	 @RequestParam("content") String content) {
+		
+		HttpSession session1 = request.getSession();
+		String currentUser = (String) session1.getAttribute("username");
+		if(currentUser == null )
+		{
+			model.addAttribute("loginStatus", "nav-login-no-login");
+			
+		}
+		else
+		{
+			model.addAttribute("loginStatus", "");
+			model.addAttribute("currentUser", currentUser);
+			int id = this.getIDUser(currentUser);
+			List<CartEntity> getCart = this.getCart(id);
+			model.addAttribute("getCart", getCart);
+		}
+		
 		Session session = factory.openSession();
 		Transaction t = session.beginTransaction();
 		try {
 			session.save(contact);
 			t.commit();
-			model.addAttribute("message", "Thêm mới thành công !");
+			model.addAttribute("message", "Gửi thành công !");
 		} catch (Exception e) {
 			t.rollback();
-			model.addAttribute("message", "Thêm mới thất bại !");
+			model.addAttribute("message", "Gửi thất bại !");
 		} finally {
 			session.close();
 		}
 		List<ShopEntity> shop = this.getContact();
 		model.addAttribute("shop", shop);
-		return "redirect:/contact.htm";
+		return "contact/contact";
 	}
 	
 	public Integer getIDUser(String username) {

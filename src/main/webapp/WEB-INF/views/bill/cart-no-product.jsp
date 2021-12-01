@@ -74,7 +74,7 @@
           <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/cart/9bdd8040b334d31946f49e36beaf32db.png"
             alt="">
           <span>Giỏ hàng của bạn còn trống</span>
-          <a href="#" class="">Mua ngay</a>
+          <a href="products/index.htm" class="">Mua ngay</a>
         </div>
           </div>
         </div>

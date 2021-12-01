@@ -7,7 +7,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>QA company | Đăng kí</title>
+    <title>QA company | Sửa tài khoản</title>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
     <link rel="stylesheet"

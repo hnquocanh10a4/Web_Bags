@@ -63,8 +63,8 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="breadcrumb-holder">
-                    <h1 class="main-title float-left">Contact</h1>
-                    
+                    <h1 class="main-title float-left">Liên hệ</h1>
+                    <a href="login.htm"><i class="fas fa-sign-out-alt admin-out"></i></a>
                 </div>
                 <div class="card-body">
 
@@ -72,9 +72,9 @@
                         <table class="table table-condensed table-hover table-bordered table-responsive-md">
                             <thead>
                                 <tr>
-                                    <th style="min-width:320px">Message details</th>
-                                    <th style="min-width:180px">Sender details</th>
-                                    <th style="min-width:100px">Actions</th>
+                                    <th style="min-width:320px">Chi tiết tin nhắn</th>
+                                    <th style="min-width:180px">Gửi bởi</th>
+                                    <th style="min-width:100px">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,7 +95,7 @@
 
                                     <td>
                                         
-                                        <a href="contact/${contact.id_contact }.htm?delete" class="btn btn-danger btn-sm btn-block mt-2"><i class="fas fa-trash"></i> Delete</a>
+                                        <a href="admin/contact/${contact.id_contact }.htm?delete" class="btn btn-danger btn-sm btn-block mt-2"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
                                  </c:forEach>

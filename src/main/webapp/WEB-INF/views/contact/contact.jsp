@@ -95,11 +95,13 @@ https://www.tooplate.com/view/2114-pixie
                     <div class="col-md-6">
                       <fieldset>
                         <form:input path="name" type="text" class="form-control" placeholder="Your name..."/>
+                        <form:errors path="name" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-6">
                       <fieldset>
                         <form:input path="email" type="text" class="form-control" placeholder="Your email..."/>
+                        <form:errors path="email" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-12">
@@ -110,6 +112,7 @@ https://www.tooplate.com/view/2114-pixie
                     <div class="col-md-12">
                       <fieldset>
                         <form:textarea path="content" rows="6" class="form-control" placeholder="Your message..."/>
+                        <form:errors path="content" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-12">
