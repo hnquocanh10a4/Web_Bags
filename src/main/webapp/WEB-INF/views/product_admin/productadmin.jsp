@@ -13,7 +13,8 @@
     <meta name="keywords" content="au theme template">
 	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
-    <title>Admin</title>
+    <title>QA shop | Admin</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <link href="<c:url value='/resources/vendor1/font-awesome-5/css/fontawesome-all.min.css'/>" rel="stylesheet" media="all">
     <link href="<c:url value='/resources/vendor1/bootstrap-4.1/bootstrap.min.css'/>" rel="stylesheet" media="all">
     <link href="<c:url value='/resources/vendor1/css/theme.css'/>" rel="stylesheet" media="all">

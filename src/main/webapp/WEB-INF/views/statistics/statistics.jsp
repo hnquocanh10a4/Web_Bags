@@ -13,8 +13,8 @@
     <meta name="keywords" content="au theme template">
 	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
-    <title>Dashboard</title>
-
+    <title>QA shop | Admin</title>
+	  <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <!-- Fontfaces CSS-->
     <link href="<c:url value='/resources/vendor1/css/font-face.css'/>" rel="stylesheet" media="all">
     <link href="<c:url value='/resources/vendor1/font-awesome-5/css/fontawesome-all.min.css'/>" rel="stylesheet" media="all">
@@ -112,7 +112,7 @@
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Earnings By Items</h2>
+                                <h2 class="title-1 m-b-25">Thống kê đơn hàng khách đã mua</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>

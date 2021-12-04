@@ -14,7 +14,8 @@
     <meta name="keywords" content="au theme template">
 	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
-    <title>Admin manage contact</title>
+    <title>QA shop | Admin</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
 
     <!-- Fontfaces CSS-->
     <link href="<c:url value='/resources/vendor1/css/font-face.css' />" rel="stylesheet" media="all">

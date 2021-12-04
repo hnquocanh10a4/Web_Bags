@@ -14,7 +14,8 @@
     <meta name="keywords" content="au theme template"> -->
 
     <!-- Title Page-->
-    <title>Manage Users</title>
+    <title>QA shop | Admin</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <base href="${pageContext.servletContext.contextPath}/">
 
     <!-- Fontfaces CSS-->
