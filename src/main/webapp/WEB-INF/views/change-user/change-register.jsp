@@ -7,7 +7,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>QA company | Đăng kí</title>
+    <title>QA shop | Sửa tài khoản</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
     <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/fontawesome.css'>
     <link rel="stylesheet"

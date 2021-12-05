@@ -14,7 +14,8 @@
     <meta name="keywords" content="au theme template">
 	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
-    <title>Admin manage contact</title>
+    <title>QA shop | Admin</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
 
     <!-- Fontfaces CSS-->
     <link href="<c:url value='/resources/vendor1/css/font-face.css' />" rel="stylesheet" media="all">
@@ -63,8 +64,8 @@
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="breadcrumb-holder">
-                    <h1 class="main-title float-left">Contact</h1>
-                    
+                    <h1 class="main-title float-left">Liên hệ</h1>
+                    <a href="login.htm"><i class="fas fa-sign-out-alt admin-out"></i></a>
                 </div>
                 <div class="card-body">
 
@@ -72,9 +73,9 @@
                         <table class="table table-condensed table-hover table-bordered table-responsive-md">
                             <thead>
                                 <tr>
-                                    <th style="min-width:320px">Message details</th>
-                                    <th style="min-width:180px">Sender details</th>
-                                    <th style="min-width:100px">Actions</th>
+                                    <th style="min-width:320px">Chi tiết tin nhắn</th>
+                                    <th style="min-width:180px">Gửi bởi</th>
+                                    <th style="min-width:100px">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -95,7 +96,7 @@
 
                                     <td>
                                         
-                                        <a href="contact/${contact.id_contact }.htm?delete" class="btn btn-danger btn-sm btn-block mt-2"><i class="fas fa-trash"></i> Delete</a>
+                                        <a href="admin/contact/${contact.id_contact }.htm?delete" class="btn btn-danger btn-sm btn-block mt-2"><i class="fas fa-trash"></i> Delete</a>
                                     </td>
                                 </tr>
                                  </c:forEach>

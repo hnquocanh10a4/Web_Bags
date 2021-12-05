@@ -93,7 +93,7 @@
 
             <div class="nav-login ${loginStatus} }">
                 <i class="fas fa-user nav-login-icon"></i>
-                <ul class="nav-login-list" style="width: 103px; border-radius: 5px;padding: 10px 5px;">
+                <ul class="nav-login-list" style="width: 110px; border-radius: 5px;">
                   <li class="nav-login-item">
                     
                     <a href="login.htm" class="nav-login-link-login">Đăng nhập</a>
@@ -102,12 +102,22 @@
                     
                     <a href="register.htm" class="nav-login-link-register">Đăng kí</a>
                   </li>
-                   <li class="nav-login-item">
-
-                  <a href="purchase.htm" class="nav-login-link-register">Đơn mua</a>
-                	</li>
+                  
                 </ul>
-                <span class="nav-login-name"> ${currentUser}</span>
+                
+                <div class="nav-show-pur">
+                	<span class="nav-login-name"> ${currentUser}</span>
+                	<ul class="nav-show-pur-list">
+                  <li class="nav-show-pur-item">
+  
+                    <a href="changeUser.htm" class="nav-show-pur-link">Sửa tài khoản</a>
+                  </li>
+                  <li class="nav-show-pur-item">
+  
+                    <a href="purchase.htm" class="nav-show-pur-link">Đơn đã mua</a>
+                  </li>
+                </ul>
+                </div>
                 <a href="login.htm" class="fas fa-sign-out-alt nav-login-icon"></a>
               </div>
 

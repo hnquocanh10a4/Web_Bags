@@ -13,7 +13,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <title>Pixie - Product Detail</title>
+  <title>QA shop | Chi tiết sản phẩm</title>
+    <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
   <base href="${pageContext.servletContext.contextPath}/">
 
   <!-- Bootstrap core CSS -->
@@ -111,44 +112,7 @@
 
 
   <!-- Subscribe Form Starts Here -->
-  <div class="subscribe-form">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-heading">
-            <div class="line-dec"></div>
-            <h1>Subscribe on PIXIE now!</h1>
-          </div>
-        </div>
-        <div class="col-md-8 offset-md-2">
-            <div class="main-content">
-              <p>Godard four dollar toast prism, authentic heirloom raw denim messenger bag gochujang put a bird on it celiac readymade vice.</p>
-              <div class="container">
-          		
-                <form id="subscribe" action="send.htm" method="post">
-               
-                  <div class="row">
-                    <div class="col-md-7">
-                      <fieldset>
-                        <input name="to" type="text" class="form-control" id="email" 
-                        onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
-                    	onBlur="if(this.value == '') { this.value = 'Your Email...';}"
-                    	value="Your Email..." required="">
-                      </fieldset>
-                    </div>
-                    <div class="col-md-5">
-                      <fieldset>
-                        <button  id="form-submit" class="button">Subscribe Now!</button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
+  
   <!-- Subscribe Form Ends Here -->
 
 

@@ -1,6 +1,8 @@
 .main-content{
     padding-left: 15px;
     background-color: #fff;
+    padding-top: 50px;
+    padding-left: 50px;
 }
 
 
@@ -13,7 +15,6 @@ html {
 body {
     font-size: .9rem;
     background-color: #e9ecef;
-    padding-bottom: 50px
 }
 
 a {
@@ -178,11 +179,12 @@ img {
     margin: 0 -20px 20px -20px;
     padding: 11px 25px 0 25px;
     box-shadow: none;
-    
+    display: flex;
+    justify-content: space-between;
 }
 
 .breadcrumb-holder .main-title {
-    font-size: 1.4rem;
+    font-size: 36px;
     line-height: 1.4rem;
 }
 
@@ -1666,4 +1668,15 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 
 .err-user{
 	color: red;
+}
+
+.admin-out{
+	font-size: 30px;
+    color: #3a8bcd;
+    padding-right: 20px;
+}
+
+.users-top{
+	display: flex;
+	justify-content: space-between;
 }

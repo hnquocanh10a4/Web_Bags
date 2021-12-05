@@ -13,7 +13,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-    <title>Pixie Template - Contact</title>
+    <title>QA shop | Liên hệ</title>
+      <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <base href="${pageContext.servletContext.contextPath}/">
 
     <!-- Bootstrap core CSS -->
@@ -95,11 +96,13 @@ https://www.tooplate.com/view/2114-pixie
                     <div class="col-md-6">
                       <fieldset>
                         <form:input path="name" type="text" class="form-control" placeholder="Your name..."/>
+                        <form:errors path="name" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-6">
                       <fieldset>
                         <form:input path="email" type="text" class="form-control" placeholder="Your email..."/>
+                        <form:errors path="email" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-12">
@@ -110,6 +113,7 @@ https://www.tooplate.com/view/2114-pixie
                     <div class="col-md-12">
                       <fieldset>
                         <form:textarea path="content" rows="6" class="form-control" placeholder="Your message..."/>
+                        <form:errors path="content" element="span" cssClass="errors"/>
                       </fieldset>
                     </div>
                     <div class="col-md-12">

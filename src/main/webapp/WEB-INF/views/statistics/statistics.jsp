@@ -13,8 +13,8 @@
     <meta name="keywords" content="au theme template">
 	<base href="${pageContext.servletContext.contextPath}/">
     <!-- Title Page-->
-    <title>Dashboard</title>
-
+    <title>QA shop | Admin</title>
+	  <link rel="icon" href="<c:url value='/resources/assets/images/ShopTitleIcon.svg'/>" type="image/gif" sizes="20x20">
     <!-- Fontfaces CSS-->
     <link href="<c:url value='/resources/vendor1/css/font-face.css'/>" rel="stylesheet" media="all">
     <link href="<c:url value='/resources/vendor1/font-awesome-5/css/fontawesome-all.min.css'/>" rel="stylesheet" media="all">
@@ -24,6 +24,7 @@
     <link href="<c:url value='/resources/vendor1/bootstrap-4.1/bootstrap.min.css'/>" rel="stylesheet" media="all">
 	<link href="<c:url value='/resources/vendor1/css/theme.css'/>" rel="stylesheet" media="all"> 
     <link rel="stylesheet" href="<c:url value='/resources/vendor1/css/style.css'/>">
+    <link href="<c:url value='/resources/vendor1/css/style-qa.css' />" rel="stylesheet" media="all">
 
  
 
@@ -46,8 +47,9 @@
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
                         <div class="row ">
-                            <div class="col-lg-12">
+                            <div class="col-lg-12 users-top">
                                 <h1 class="">Thống Kê </h1>
+                                <a href="login.htm"><i class="fas fa-sign-out-alt admin-out"></i></a>
                             </div>
                         </div>
                         <div class="row m-t-25">
@@ -110,7 +112,7 @@
 
                         <div class="row">
                             <div class="col-lg-12">
-                                <h2 class="title-1 m-b-25">Earnings By Items</h2>
+                                <h2 class="title-1 m-b-25">Thống kê đơn hàng khách đã mua</h2>
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
@@ -141,14 +143,7 @@
 
                         </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a
-                                            href="https://colorlib.com">Colorlib</a>.</p>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

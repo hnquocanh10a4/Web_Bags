@@ -3,7 +3,7 @@
    <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <img src="<c:url value='/resources/assets/images/Shop.png'/>" alt="" style="height: 75px;">
+                   <img src="<c:url value='/resources/assets/images/logoAdmin.png'/>" alt="" style="height: 140px; padding: 7px 30px 0 30px">
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1">

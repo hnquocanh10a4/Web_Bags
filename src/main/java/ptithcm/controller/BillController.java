@@ -147,9 +147,10 @@ public class BillController {
 			model.addAttribute("purchase", purchase);
 			
 			
-			return "bill/purchase-order";
+			return "redirect:/purchase.htm";
 		}
 			return "bill/cart-no-product";
+			
 		
 						
 		
