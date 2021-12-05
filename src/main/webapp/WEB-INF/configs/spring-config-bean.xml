@@ -21,5 +21,9 @@
 		<property name="image" value="resources/assets/images/about-us.jpg" />
 	</bean>
 	
+	<bean id="uploadfile" class="ptithcm.bean.UploadFile">
+		<property name="basePath" value="E:\\eclipse_space\\New folder\\Web_Bags\\src\\main\\webapp\\resources\\assets\\images" />
+	</bean>
+	
 
 </beans>

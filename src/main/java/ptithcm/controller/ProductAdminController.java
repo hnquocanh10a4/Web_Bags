@@ -1,5 +1,9 @@
 package ptithcm.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -20,8 +24,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
-
+import ptithcm.bean.UploadFile;
 import ptithcm.entity.ColorEntity;
 import ptithcm.entity.ProductEntity;
 
@@ -33,6 +39,10 @@ import ptithcm.entity.ProductEntity;
 public class ProductAdminController {
 	@Autowired
 	SessionFactory factory;
+	
+	@Autowired
+	UploadFile baseUploadFile;
+	
 	@RequestMapping(value="product", method = RequestMethod.GET)
 	public String index(ModelMap model, @ModelAttribute("product") ProductEntity product ) {
 		List<ProductEntity> products = this.getProduct();
@@ -43,7 +53,7 @@ public class ProductAdminController {
 	}
 
 	@RequestMapping(value="product",params = "BtnAdd", method = RequestMethod.POST)
-	public String insert(ModelMap model,@Validated  @ModelAttribute("product") ProductEntity product, BindingResult errors) {
+	public String insert(ModelMap model,@RequestParam("image") MultipartFile image, @Validated  @ModelAttribute("product") ProductEntity product, BindingResult errors) {
 		model.addAttribute("btnStatus", "BtnAdd");
 		System.out.println(product.getTitle());
 		System.out.println(product.getPrice());
@@ -52,6 +62,21 @@ public class ProductAdminController {
 		System.out.println(product.getBrands().getId_brand());
 		System.out.println(product.getColors().getId_color());
 		System.out.println(product.getDescr());
+		
+		if(image.isEmpty()) {
+			model.addAttribute("msgImage", "Vui lòng chọn ảnh");
+		}else {
+		try {
+			String fileName  = image.getOriginalFilename();
+			String photoPath =  baseUploadFile.getBasePath() + File.separator +  fileName;
+		
+			image.transferTo(new File(photoPath));
+			product.setImage(fileName);
+		}catch(Exception e) {
+			
+		}
+		}
+		
 		
 		Integer temp = this.insertProduct(product);
 		if (temp != 0) {
@@ -83,6 +108,7 @@ public class ProductAdminController {
 	@RequestMapping(value="product/{id}.htm",params = "update")
 	public String update(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
 		System.out.print(1234);
+		
 		model.addAttribute("product", this.getProduct(id));
 		model.addAttribute("btnStatus", "BtnUpdate");
 		HttpSession session = request.getSession();
@@ -92,7 +118,7 @@ public class ProductAdminController {
 	}
 	
 	@RequestMapping(value="product.htm",params = "BtnUpdate" )
-	public String updateProduct1(ModelMap model,@Validated  @ModelAttribute("product") ProductEntity product, BindingResult errors, HttpServletRequest request) {
+	public String updateProduct1(ModelMap model,@RequestParam("image") MultipartFile image, @Validated  @ModelAttribute("product") ProductEntity product, BindingResult errors, HttpServletRequest request) {
 		HttpSession session = request.getSession();
 		int id = Integer.parseInt(session.getAttribute("idPR").toString());
 		product.setId_product(id);
@@ -104,6 +130,19 @@ public class ProductAdminController {
 		System.out.println(product.getBrands().getId_brand());
 		System.out.println(product.getColors().getId_color());
 		System.out.println(product.getDescr());
+		if(image.isEmpty()) {
+			model.addAttribute("msgImage", "Vui lòng chọn ảnh");
+		}else {
+		try {
+			String fileName  = image.getOriginalFilename();
+			String photoPath =  baseUploadFile.getBasePath() + File.separator +  fileName;
+		
+			image.transferTo(new File(photoPath));
+			product.setImage(fileName);
+		}catch(Exception e) {
+			
+		}
+		}
 		Integer temp = this.updateProduct(product);
 		if (temp != 0) {
 			model.addAttribute("message123", "Update thành công");
@@ -213,6 +252,9 @@ public class ProductAdminController {
 		List<ColorEntity> list = query.list();
 		return list;
 	}
+	
+
+	
 	
 
 	}

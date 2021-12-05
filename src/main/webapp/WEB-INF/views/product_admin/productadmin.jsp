@@ -39,7 +39,7 @@
             <div class="main-content">
 
                 <div class="content">
-                    <form:form action="admin/product.htm"  method="POST" modelAttribute="product" >
+                    <form:form action="admin/product.htm"  method="POST" modelAttribute="product" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="">Tên sản phẩm</label>
                             <form:input type="text" class="" path="title"/>
@@ -59,7 +59,8 @@
                         <div class="form-group">
                             <label for="">Hình ảnh</label>
                             <form:input type="file"  path="image" />
-                            <form:errors path="image" element="span" cssClass="errors" />
+                            <span class="errors">${msgImage}</span>
+                           
                         </div>
                         <div class="form-group">
                             <label for="">Màu sắc</label>
