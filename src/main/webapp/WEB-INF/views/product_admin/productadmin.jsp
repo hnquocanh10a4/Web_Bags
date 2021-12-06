@@ -28,14 +28,15 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="background: lightblue">
       <%@include file="/WEB-INF/views/include/sidebar.jsp" %>
         <!-- END MENU SIDEBAR-->
 
         <!-- PAGE CONTAINER-->
         <div class="page-container">
-            <div class="header">
+            <div class="header users-top">
                 <h2 class="header-heading">${title }</h2>
+                 <a href="login.htm"><i class="fas fa-sign-out-alt admin-out"></i></a>
             </div>
             <div class="main-content">
 
@@ -92,6 +93,7 @@
                         </div>
                     </form:form>
                 </div>
+                <p class="errors">${errDe}</p>
                 <div class="product">
                     <table>
                         <thead>

@@ -22,7 +22,7 @@
 	</bean>
 	
 	<bean id="uploadfile" class="ptithcm.bean.UploadFile">
-		<property name="basePath" value="E:\\eclipse_space\\New folder\\Web_Bags\\src\\main\\webapp\\resources\\assets\\images" />
+		<property name="basePath" value="E:\\DoAn\\eclipse workspace\\Web_Bags\\src\\main\\webapp\\resources\\assets\\images" />
 	</bean>
 	
 

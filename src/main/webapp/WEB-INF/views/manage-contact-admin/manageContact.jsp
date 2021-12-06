@@ -51,7 +51,7 @@
 </head>
 
 <body class="animsition">
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="background: #fff">
         <%@include file="/WEB-INF/views/include/sidebar.jsp" %>
         <!-- END MENU SIDEBAR-->
 

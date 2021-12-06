@@ -28,7 +28,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import ptithcm.bean.UploadFile;
+import ptithcm.entity.BillDetailEntity;
+import ptithcm.entity.CartEntity;
 import ptithcm.entity.ColorEntity;
+import ptithcm.entity.CustomerEntity;
 import ptithcm.entity.ProductEntity;
 
 
@@ -98,6 +101,30 @@ public class ProductAdminController {
 // xoa san pham
 	@RequestMapping(value="product/{id}.htm",params = "delete")
 	public String delete(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
+		model.addAttribute("title", "Thêm Sản phẩm");
+		List<CartEntity> idUser  =this.getIdUserInCart();
+		
+		for (CartEntity item : idUser) {
+			System.out.println(item.getPk().getCustomerEntity().getId_user());
+			if (id==item.getPk().getProductEntity().getId_product()) {
+				model.addAttribute("errDe", "Sản phẩm đã được mua không thể xóa");
+				List<ProductEntity> products = this.getProduct();
+				model.addAttribute("products", products);
+				model.addAttribute("btnStatus", "BtnAdd");
+				return "product_admin/productadmin";
+			}
+		}
+		
+		List<BillDetailEntity> idBill = this.getIdUserInBill();
+		for (BillDetailEntity item1 : idBill) {
+			if (id==item1.getPk().getProductEntity().getId_product()) {
+				model.addAttribute("errDe", "Sản phẩm đã được mua không thể xóa");
+				List<ProductEntity> products = this.getProduct();
+				model.addAttribute("products", products);
+				model.addAttribute("btnStatus", "BtnAdd");
+				return "product_admin/productadmin";
+			}
+		}
 		this.deleteProduct(this.getProduct(id));
 		List<ProductEntity> products = this.getProduct();
 		model.addAttribute("products", products);
@@ -107,7 +134,30 @@ public class ProductAdminController {
 // cap nhat san pham	
 	@RequestMapping(value="product/{id}.htm",params = "update")
 	public String update(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
-		System.out.print(1234);
+//		model.addAttribute("title", "Cập nhật Sản phẩm");
+//		List<CartEntity> idUser  =this.getIdUserInCart();
+//		
+//		for (CartEntity item : idUser) {
+//			System.out.println(item.getPk().getCustomerEntity().getId_user());
+//			if (id==item.getPk().getProductEntity().getId_product()) {
+//				model.addAttribute("errDe", "Sản phẩm đã được mua không thể cập nhật");
+//				List<ProductEntity> products = this.getProduct();
+//				model.addAttribute("products", products);
+//				model.addAttribute("btnStatus", "BtnAdd");
+//				return "product_admin/productadmin";
+//			}
+//		}
+//		
+//		List<BillDetailEntity> idBill = this.getIdUserInBill();
+//		for (BillDetailEntity item1 : idBill) {
+//			if (id==item1.getPk().getProductEntity().getId_product()) {
+//				model.addAttribute("errDe", "Sản phẩm đã được mua không thể cập nhật");
+//				List<ProductEntity> products = this.getProduct();
+//				model.addAttribute("products", products);
+//				model.addAttribute("btnStatus", "BtnAdd");
+//				return "product_admin/productadmin";
+//			}
+//		}
 		
 		model.addAttribute("product", this.getProduct(id));
 		model.addAttribute("btnStatus", "BtnUpdate");
@@ -253,8 +303,22 @@ public class ProductAdminController {
 		return list;
 	}
 	
-
+// Lay tat ca cart vs billdetail
+	public List<CartEntity> getIdUserInCart() {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM CartEntity";
+		Query query = session.createQuery(hql);
+		List<CartEntity> list = query.list();
+		return list;
+	}
 	
+	public List<BillDetailEntity> getIdUserInBill() {
+		Session session = factory.getCurrentSession();
+		String hql = "FROM BillDetailEntity";
+		Query query = session.createQuery(hql);
+		List<BillDetailEntity> list = query.list();
+		return list;
+	}
 	
 
 	}
