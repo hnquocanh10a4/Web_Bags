@@ -542,3 +542,7 @@
 .errors{
 	color: red;
 }
+
+.current-page.active{
+	background-color: #3a8bcd;
+}
