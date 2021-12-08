@@ -76,7 +76,7 @@
               <label for="quantity">Số lượng:</label>
               <input path="quantity" name="quantity" type="quantity" class="quantity-text" id="quantity"
                 onfocus="if(this.value == '1') { this.value = ''; }" onBlur="if(this.value == '') { this.value = '1';}"
-                value="1"></input>
+                value="1" pattern="[0-9_.]*" title="Vui lòng chỉ nhập số"></input>
               <button onclick="tb_cart()" type="submit" class="button">Order Now!</button>
               <form:errors path="quantity" element="span" cssClass="errors"/>
                 <div class="errors">${messCart}</div>

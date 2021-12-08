@@ -16,6 +16,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -46,7 +47,7 @@ public class ProductEntity {
 	@ManyToOne
 	@JoinColumn(name="ID_BRAND")
 	private BrandEntity brands;
-	@Column(name="QUANTITY")	
+	@Column(name="QUANTITY")
 	@Min(value=1, message = "số lượng tối thiểu là 1")
 	private Integer quantity;
 	

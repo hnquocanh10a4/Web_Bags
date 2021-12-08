@@ -68,7 +68,8 @@ public class ProductAdminController {
 		
 		if(image.isEmpty()) {
 			model.addAttribute("msgImage", "Vui lòng chọn ảnh");
-		}else {
+		}
+		else {
 		try {
 			String fileName  = image.getOriginalFilename();
 			String photoPath =  baseUploadFile.getBasePath() + File.separator +  fileName;

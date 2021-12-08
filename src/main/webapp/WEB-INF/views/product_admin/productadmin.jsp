@@ -49,12 +49,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">Giá</label>
-                            <form:input type="text" class="" path="price"/>
+                            <form:input type="text" class="" path="price" pattern="[0-9_.]*" title="Vui lòng chỉ nhập số"/>
                            <form:errors path="price" element="span" cssClass="errors" />
                         </div>
                         <div class="form-group">
                             <label for="">Số lượng</label>
-                            <form:input type="text" class="" path="quantity"/>
+                            <form:input type="text" class="" path="quantity" pattern="[0-9_.]*" title="Vui lòng chỉ nhập số"/>
                              <form:errors path="quantity" element="span" cssClass="errors" />
                         </div>
 

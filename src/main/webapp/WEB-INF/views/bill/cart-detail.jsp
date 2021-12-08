@@ -55,7 +55,7 @@ https://www.tooplate.com/view/2114-pixie
           </div>
           <div class="col-md-6 col-sm-12">
             <div class="cart-right">
-                <a href="" class="cart-right-home-link">  Tiếp tục mua hàng</a>
+                <a href="products/index.htm" class="cart-right-home-link">  Tiếp tục mua hàng</a>
                 <span class="cart-right-title">Giỏ hàng</span>
             </div>
             <div class="cart-detail">
@@ -64,7 +64,7 @@ https://www.tooplate.com/view/2114-pixie
                 <img src="<c:url value='/resources/assets/images/${cart.pk.productEntity.image}' />" alt="" class="cart-detail-img">
                 <div class="cart-detail-info">
                     <div class="cart-detail-top">
-                        <a href="#" class="cart-detail-top-name">${cart.pk.productEntity.title}
+                        <a href="singleproduct.htm?id=${cart.pk.productEntity.id_product}" class="cart-detail-top-name">${cart.pk.productEntity.title}
                         </a>
                         <span class="cart-detail-top-price">${cart.pk.productEntity.price} x ${cart.quantity}</span>
                     </div>

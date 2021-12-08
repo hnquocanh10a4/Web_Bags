@@ -76,41 +76,45 @@ public class SingleProductController {
 		int currentIDpr=Integer.parseInt(getID);
 		ProductEntity pro = this.getPro(currentIDpr);
 		model.addAttribute("pro", pro);
-		int OldQuantity = this.getQuantity(currentIDpr);
-		if(cart.getQuantity()>OldQuantity)
-		{
-			model.addAttribute("messCart", "Quá số lượng còn lại !");
-			return "products/single-product";
+			int OldQuantity = this.getQuantity(currentIDpr);
+			if(cart.getQuantity()>OldQuantity)
+			{
+				model.addAttribute("messCart", "Quá số lượng còn lại !");
+				return "products/single-product";
+			}
+			
+			HttpSession session1 = request.getSession();
+			String currentUser = (String) session1.getAttribute("username");
+			int id = this.getIDUser(currentUser);
+			CartPK pk = new CartPK();
+			CustomerEntity user = new CustomerEntity();
+			user.setId_user(id);
+			ProductEntity product = new ProductEntity();
+			product.setId_product(currentIDpr);
+			pk.setProductEntity(product);
+			pk.setCustomerEntity(user);
+			cart.setPk(pk);
+			Session session = factory.openSession();
+			Transaction t = session.beginTransaction();
+			try {
+				session.save(cart);
+				t.commit();
+				model.addAttribute("messCart", "Thêm vào giỏ hàng thành công !");
+			} catch (Exception e) {
+				t.rollback();
+				model.addAttribute("messCart", "Sản phẩm đã được đặt !");
+				return "products/single-product";
+			} finally {
+				session.close();
+
+			}
+			return "redirect:/products/index.htm";
 		}
 		
-		HttpSession session1 = request.getSession();
-		String currentUser = (String) session1.getAttribute("username");
-		int id = this.getIDUser(currentUser);
-		CartPK pk = new CartPK();
-		CustomerEntity user = new CustomerEntity();
-		user.setId_user(id);
-		ProductEntity product = new ProductEntity();
-		product.setId_product(currentIDpr);
-		pk.setProductEntity(product);
-		pk.setCustomerEntity(user);
-		cart.setPk(pk);
-		Session session = factory.openSession();
-		Transaction t = session.beginTransaction();
-		try {
-			session.save(cart);
-			t.commit();
-			model.addAttribute("messCart", "Thêm vào giỏ hàng thành công !");
-		} catch (Exception e) {
-			t.rollback();
-			model.addAttribute("messCart", "Sản phẩm đã được đặt !");
-			return "products/single-product";
-		} finally {
-			session.close();
-
-		}
+		
 //		return "login/register";
-		return "redirect:/products/index.htm";
-	}
+		
+	
 	
 	@RequestMapping(value="singleproduct/{id}.htm",params = "delete")
 	public String delete(ModelMap model, @ModelAttribute("product") ProductEntity product, HttpServletRequest request, @PathVariable("id") Integer id) {
